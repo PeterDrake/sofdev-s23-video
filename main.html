@@ -5,7 +5,26 @@
       <script src="script.js"></script>
       <style src="styles.css"></style>
    </head>
-   <body>
-      <p></p>
+   <form>
+    <h1>Hello world</h1>
+        <p></p>
+        <div id="form">
+            <form action="/post.php">
+                <label>Your Name: <br>
+                    <input type="text" class="name" placeholder="full name">
+                </label><br>
+                <label>Email: <br>
+                    <input type="text" class="email" placeholder="email">
+                </label>
+                <br>
+                <!-- <label>Upload Video: <br>
+                    <input type="file" accept="video/*" class="video"placeholder="">
+                </label> -->
+                <br>
+                <br>
+                <input type="submit" value="Submit"></input>
+                
+            </form>
+        </div>
    </body>
 </html>
