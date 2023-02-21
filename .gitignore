@@ -24,3 +24,4 @@ __pycache__/
 # Sources I consulted in creating this file:
 # https://github.com/github/gitignore/blob/master/Global/JetBrains.gitignore
 # https://github.com/github/gitignore/blob/master/Python.gitignore
+.vscode/launch.json

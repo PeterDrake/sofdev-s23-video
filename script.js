@@ -1,16 +1,22 @@
-function getValuesFromInputs(){
-    const name = document.querySelector("input.name").value;
-    const email = document.querySelector("input.email").value;
-    const video = document.querySelector("input.video").files[0];
-
-    document.querySelector("form").style.display = "none";
-
-    return [name, email, video];
+console.log("hello world");
+let obj {
+  name: "hello";
 }
+let jason = "hello world";
+var fs = require("fs");
+fs.writeFile('myjsonfile.json', jason, 'utf8', callback);
 
-function handleSubmit(){
-    const info = [];
-    info = getValuesFromInputs();
+function testResults (form) {
+    let inputValue = form.inputbox.value;
+    let formData = new FormData(form);
+    let object = {};
+    formData.forEach(function(value, key){
+      object[key] = value;
+    });
 
-    console.log(info);
-}
+    
+    var json = JSON.stringify(object);
+    alert(json);        
+    var fs = require("fs");
+    fs.writeFile('myjsonfile.json', json, 'utf8', callback);
+  }
