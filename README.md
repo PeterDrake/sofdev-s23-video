@@ -47,7 +47,8 @@ type apt-add-repository
 ```
 npm install handbrake-js --save
 ```
-```sudo add-apt-repository --yes ppa:stebbins/handbrake-releases
+```
+sudo add-apt-repository --yes ppa:stebbins/handbrake-releases
 ```
 ```
 sudo apt-get install -qq handbrake-cli
