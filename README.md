@@ -3,6 +3,8 @@ Video project for Software Development, spring 2023
 
 ## Installation Instructions for Handbrake on Raspberry Pi
 
+***Only tested on Raspberry Pi 3B 2GB with 64 bit Raspbian.***
+
 
 ### Install Dependencies
 ```
