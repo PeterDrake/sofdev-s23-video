@@ -5,14 +5,18 @@ Video project for Software Development, spring 2023
 
 
 ### Install Dependencies
-`sudo apt get update`
+```
+sudo apt get update
+```
 
 ```
 sudo apt-get install appstream autoconf automake autopoint build-essential cmake git libass-dev libbz2-dev libfontconfig1-dev libfreetype6-dev libfribidi-dev libharfbuzz-dev libjansson-dev liblzma-dev libmp3lame-dev libnuma-dev libogg-dev libopus-dev libsamplerate-dev libspeex-dev libtheora-dev libtool libtool-bin libturbojpeg0-dev libvorbis-dev libx264-dev libxml2-dev libvpx-dev m4 make meson nasm ninja-build patch pkg-config python tar zlib1g-dev
 ```
 
 ### Install Curl
-`sudo apt install curl`
+```
+sudo apt install curl
+```
 
 ### Install Node.js and NPM
 ```
@@ -27,15 +31,26 @@ node -v
 npm -v
 ```
 If NPM is not installed:
-`sudo apt install npm`
+```
+sudo apt install npm
+```
 
 ### Fix add-apt-repository
-`sudo apt install software-properties-common`
-`type apt-add-repository`
+```
+sudo apt install software-properties-common
+```
+```
+type apt-add-repository
+```
 
 ### Install handbrake-js
-`npm install handbrake-js --save`
-`sudo add-apt-repository --yes ppa:stebbins/handbrake-releases`
-`sudo apt-get install -qq handbrake-cli`
+```
+npm install handbrake-js --save
+```
+```sudo add-apt-repository --yes ppa:stebbins/handbrake-releases
+```
+```
+sudo apt-get install -qq handbrake-cli
+```
 
 See `handbrake_test.js` for an example.
