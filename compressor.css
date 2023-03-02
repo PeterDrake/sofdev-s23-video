@@ -1,0 +1,34 @@
+body {
+	background-color: #de5d1c;
+}
+/*div {
+	width: 50%;
+	align-self: center;
+	text-align: left;
+	border: 3px solid;
+	border-color: #c9501c;
+}*/
+h1 {
+	padding: 4%;
+	font-family: goudy-old-style,serif;
+    font-weight: 400;
+    font-size: 80px;
+    line-height: .94;
+    color: #de5d1c;
+    background-color: black;
+    border: 10px solid grey;
+}
+.floatContainer {
+	border: 3px solid #fff;
+    padding: 20px;
+}
+.floatChild {
+	display: flex;
+	margin: 20px;
+	float: left;
+    padding: 20px;
+	background-color: #f8f2ed;
+	color: black;
+	border: 10px solid black;
+	width: 30%;
+}
