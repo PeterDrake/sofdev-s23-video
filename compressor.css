@@ -23,6 +23,7 @@ h1 {
     padding: 20px;
 }
 .floatChild {
+	display: flex;
 	margin: 20px;
 	float: left;
     padding: 20px;

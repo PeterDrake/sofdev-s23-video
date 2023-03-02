@@ -11,7 +11,7 @@
 		<h1>Lewis & Clark College Video Compressor Service</h1>
 		<div class="floatContainer">
 			<div class="floatChild">
-				<form>
+				<form action="/post.php" method="GET">
 					<p>Please enter your name and email:</p>
 					<input type="text" id="fname" name="fname" placeholder="first name"><br>
 					<input type="text" id="lname" name="lname" placeholder="last name"><br>
@@ -25,6 +25,7 @@
 						<input type="radio" id="large" name="desired_size" value="large">
 						<label for="large">Large</label>
 					</p>
+					<input type ="button" name="button" value="Submit" onClick="testResults(this.form)">
 				</form>
 			</div>
 			<div class="floatChild">
