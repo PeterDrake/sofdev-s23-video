@@ -8,7 +8,7 @@ Video project for Software Development, spring 2023
 
 ### Install Dependencies
 ```
-sudo apt get update
+sudo apt-get update
 ```
 
 ```
