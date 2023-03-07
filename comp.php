@@ -9,18 +9,9 @@
 
     <body>
         <?php
-            // $con = mysqli_connect("compression@localhost","compression","compression","compression");
+        //lolk
             $firstName = $_POST['f_name'];
-            // $lastName = $_POST['l_name'];
-            // $email = $_POST['email'];
-            // $file = $_POST['file'];
-            // $size = $_POST['size'];
-            // $date = "2000-08-01";
-
-
-            // $sql = "INSERT INTO `tbl_contact` (`FirstName`, `LastName`, `Email`, `FileLocation`, `DesiredSize`, `DueDate`) VALUES ('$firstName', '$lastName', '$email', '/haha/fake', '$size', '$date')";
-            // $rs = mysqli_query($con, $sql);
-
+            //lol
         	
         	echo '<p>Thank you ' . $firstName . ', your video has been successfully uploaded.</p>'; ?>
     </body>
