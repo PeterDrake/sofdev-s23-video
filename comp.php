@@ -15,7 +15,10 @@
             $email = $_POST['e_mail'];
             $file = $_POST['file'];
             $size = $_POST['desired_size'];
-            $date = $_POST['date_due'];
+            $date = $_POST['choose_date'];
+            if($date != 'ASAP') {
+                $date = $_POST['date_due'];
+            }
 
             echo $file; 
 
