@@ -57,3 +57,12 @@ sudo apt-get install -qq handbrake-cli
 ```
 
 See `handbrake_test.js` for an example.
+
+Open up .git/config with your favorite editor (nano, geany, vim)
+Create
+```
+[user]
+  email = useremail@email.com
+  name = username on github
+  password = github authentication token
+```
