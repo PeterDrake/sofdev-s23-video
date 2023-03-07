@@ -15,7 +15,7 @@
             $email = $_POST['e_mail'];
             $file = $_POST['file'];
             $size = $_POST['desired_size'];
-            $date = "2000-08-01";
+            $date = $_POST['date_due'];
 
             echo $file; 
 
