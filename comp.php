@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang = "en">
     <head>
         <title>Video Compressor - Upload Successful</title>
@@ -9,7 +9,19 @@
 
     <body>
         <?php
-        	$firstName = $_POST['f_name'];
+            // $con = mysqli_connect("compression@localhost","compression","compression","compression");
+            $firstName = $_POST['f_name'];
+            // $lastName = $_POST['l_name'];
+            // $email = $_POST['email'];
+            // $file = $_POST['file'];
+            // $size = $_POST['size'];
+            // $date = "2000-08-01";
+
+
+            // $sql = "INSERT INTO `tbl_contact` (`FirstName`, `LastName`, `Email`, `FileLocation`, `DesiredSize`, `DueDate`) VALUES ('$firstName', '$lastName', '$email', '/haha/fake', '$size', '$date')";
+            // $rs = mysqli_query($con, $sql);
+
+        	
         	echo '<p>Thank you ' . $firstName . ', your video has been successfully uploaded.</p>'; ?>
     </body>
 </html>
