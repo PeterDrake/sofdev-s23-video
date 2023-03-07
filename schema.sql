@@ -1,0 +1,16 @@
+DROP DATABASE IF EXISTS compression;
+CREATE DATABASE compression;
+USE compression;
+
+
+CREATE TABLE compressaur (
+    FirstName VARCHAR(300) NOT NULL,
+    LastName VARCHAR(300) NOT NULL,
+    Email VARCHAR(300) NOT NULL,
+    ID INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    FileLocation VARCHAR(300) NOT NULL,
+    DesiredSize VARCHAR(300) NOT NULL,
+    DueDate DATE NOT NULL,
+    Priority INT UNSIGNED,
+    PRIMARY KEY (ID)
+);
