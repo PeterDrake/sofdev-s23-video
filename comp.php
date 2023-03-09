@@ -16,10 +16,13 @@
             $file = $_POST['file'];
             $size = $_POST['desired_size'];
             $date = $_POST['choose_date'];
-            if($date != 'ASAP') {
+
+            if($date != 'asap') {
+                echo "not asap";
                 $date = $_POST['date_due'];
             }
             else{
+                echo "asap";
                 $date = date('yyyy-mm-dd');
                 var_dump($date);
             }
