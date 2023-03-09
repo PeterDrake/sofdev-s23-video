@@ -1,6 +1,6 @@
 window.addEventListener("DOMContentLoaded",domLoaded);
 
-document.getElementById("Submit").addEventListener("click", emptyArea);
+document.getElementById("submit").addEventListener("click", emptyArea);
 
 
 function domLoaded(){
