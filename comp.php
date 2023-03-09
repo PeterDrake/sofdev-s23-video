@@ -18,12 +18,16 @@
             $date = $_POST['choose_date'];
 
             if($date != 'asap') {
-                echo "not asap";
+                
                 $date = $_POST['date_due'];
             }
             else{
-                echo "asap";
-                $date = date('yyyy-mm-dd');
+                
+                $date = date('Y-m-d');
+                var_dump($date);
+                $datetime = new DateTime($date);
+                $datetime->add(new DateInterval('P7D'));
+                $date = $datetime->format('Y-m-d');
                 var_dump($date);
             }
             echo $file; 
