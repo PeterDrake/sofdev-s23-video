@@ -19,7 +19,6 @@
             if($date != 'ASAP') {
                 $date = $_POST['date_due'];
             }
-
             echo $file; 
 
             $sql = "INSERT INTO `compressaur` (`FirstName`, `LastName`, `Email`, `FileLocation`, `DesiredSize`, `DueDate`) VALUES ('$firstName', '$lastName', '$email', '/haha/fake', '$size', '$date')";
