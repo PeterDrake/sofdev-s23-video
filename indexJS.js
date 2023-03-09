@@ -27,3 +27,4 @@ function sendEmail() {
     .then(function (message) {
     alert("mail sent successfully")
     });
+}
