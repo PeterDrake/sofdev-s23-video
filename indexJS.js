@@ -7,10 +7,24 @@ function domLoaded(){
 }
 
 function addEmailValidatior(){
-    emailField = document.getElementById("email")
+    var validRegex = /[\w._%+-]+@[\w.-]+\.[a-zA-Z]{2,4}/;
+    emailField = document.getElementById("email");
     emailField.addEventListener("keyup", function (event) {
-    isValidEmail = emailField.checkValidity();
-    console.log(isValidEmail);
+        if (emailField.value.match(validRegex)) {
+
+            console.log("true");
+        
+            document.form1.text1.focus();
+        
+            return true;
+        
+          } else {
+        
+            console.log("false");
+            document.form1.text1.focus();
+            return false;
+        
+          }
     });
 }
 
@@ -25,6 +39,6 @@ function sendEmail() {
     Body: "Well that was easy!!",
     })
     .then(function (message) {
-    alert("mail sent successfully")
+    alert("mail sent successfully");
     });
 }
