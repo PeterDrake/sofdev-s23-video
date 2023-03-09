@@ -16,10 +16,20 @@
             $file = $_POST['file'];
             $size = $_POST['desired_size'];
             $date = $_POST['choose_date'];
-            if($date != 'ASAP') {
+
+            if($date != 'asap') {
+                
                 $date = $_POST['date_due'];
             }
-
+            else{
+                
+                $date = date('Y-m-d');
+                var_dump($date);
+                $datetime = new DateTime($date);
+                $datetime->add(new DateInterval('P7D'));
+                $date = $datetime->format('Y-m-d');
+                var_dump($date);
+            }
             echo $file; 
 
             $sql = "INSERT INTO `compressaur` (`FirstName`, `LastName`, `Email`, `FileLocation`, `DesiredSize`, `DueDate`) VALUES ('$firstName', '$lastName', '$email', '/haha/fake', '$size', '$date')";

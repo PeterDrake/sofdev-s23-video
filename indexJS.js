@@ -5,10 +5,21 @@ function domLoaded(){
 }
 
 function addEmailValidatior(){
-    emailField = document.getElementById("email")
+    var validRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    emailField = document.getElementById("email");
     emailField.addEventListener("keyup", function (event) {
-    isValidEmail = emailField.checkValidity();
-    console.log(isValidEmail);
+        if (emailField.value.match(validRegex)) {
+
+            console.log("true");
+        
+            return true;
+        
+          } else {
+        
+            console.log("false");
+            return false;
+        
+          }
     });
 }
 
@@ -23,6 +34,6 @@ function sendEmail() {
     Body: "Well that was easy!!",
     })
     .then(function (message) {
-    alert("mail sent successfully")
+    alert("mail sent successfully");
     });
 }
