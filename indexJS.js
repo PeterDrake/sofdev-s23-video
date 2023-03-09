@@ -7,7 +7,7 @@ function domLoaded(){
 }
 
 function addEmailValidatior(){
-    var validRegex = /[\w._%+-]+@[\w.-]+\.[a-zA-Z]{2,4}/;
+    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     emailField = document.getElementById("email");
     emailField.addEventListener("keyup", function (event) {
         if (emailField.value.match(validRegex)) {
