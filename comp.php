@@ -30,7 +30,7 @@
                 $date = $datetime->format('Y-m-d');
                 var_dump($date);
             }
-            echo $file; 
+            // echo $file; 
 
             $sql = "INSERT INTO `compressaur` (`FirstName`, `LastName`, `Email`, `FileLocation`, `DesiredSize`, `DueDate`) VALUES ('$firstName', '$lastName', '$email', '/haha/fake', '$size', '$date')";
             $rs = mysqli_query($con, $sql);
@@ -38,10 +38,10 @@
         	
         	echo '<p>Thank you ' . $firstName . ', your video has been successfully uploaded.</p>'; 
             if($rs){
-                echo "COntact Records INSERTED";
+                echo "Contact Records INSERTED";
             }
             else{
-                echo "you suck";
+                echo "submission error";
             }
             ?>
     </body>
