@@ -14,14 +14,11 @@ function addEmailValidatior(){
 
             console.log("true");
         
-            document.form1.text1.focus();
-        
             return true;
         
           } else {
         
             console.log("false");
-            document.form1.text1.focus();
             return false;
         
           }
