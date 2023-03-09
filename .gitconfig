@@ -1,0 +1,8 @@
+[user]
+	email = lc20-0100@lclark.edu
+	name = Womzie
+	password = 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
+[safe]
+	directory = *
+[credential]
+	helper = store

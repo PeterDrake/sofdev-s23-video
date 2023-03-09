@@ -14,6 +14,7 @@
             $lastName = $_POST['l_name'];
             $email = $_POST['e_mail'];
             $file = $_POST['file'];
+		var_dump($file);
             $size = $_POST['desired_size'];
             $date = $_POST['choose_date'];
             if($date != 'ASAP') {
