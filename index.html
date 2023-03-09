@@ -4,18 +4,32 @@
 		<title>Lewis & Clark College Video Compressor Service</title>
 		<meta charset = "utf-8">
 		<link href="compressor.css" type="text/css" rel="stylesheet">
+		<script src="indexJS.js"></script>
 		<link rel="icon" type="image/x-icon" href="favicon.ico">
+		<!-- <script src="https://smtpjs.com/v3/smtp.js">
+		</script> -->
 	</head>
 
 	<body>
 		<h1>Lewis & Clark College Video Compressor Service</h1>
 		<div class="floatContainer">
 			<div class="floatChild">
-				<form action="/post.php" method="GET">
+				<form action="comp.php" method="post">
+					<p>
 					<p>Please enter your name and email:</p>
-					<input type="text" id="fname" name="fname" placeholder="first name"><br>
-					<input type="text" id="lname" name="lname" placeholder="last name"><br>
-					<input type="text" id="email" name="email" placeholder="email">
+					<input type="text" id="fName" name="f_name" size="30" required placeholder="first name"><br>
+					<input type="text" id="lName" name="l_name" size="30" required placeholder="last name"><br>
+					<input type="email" id="email" name="e_mail" size="30" required placeholder="email">
+					<input type="file" id="myFile" name="filename" accept="video/*">
+
+					<p>Please select your due date:</p>
+					<p>
+						<input type="radio" id="choose" name="choose_date" value="choose">
+						<label for="choose"><input type="date" name="date_due" id="dateDue"></label><br>
+						<input type="radio" id="asap" name="choose_date" value="asap">
+						<label for="asap">ASAP</label>
+					</p>
+
 					<p>Please select your desired file size for the completed compressed video:</p>
 					<p>
 						<input type="radio" id="small" name="desired_size" value="small">
@@ -25,7 +39,8 @@
 						<input type="radio" id="large" name="desired_size" value="large">
 						<label for="large">Large</label>
 					</p>
-					<input type ="button" name="button" value="Submit" onClick="testResults(this.form)">
+					</p>
+					<input type ="submit" value="submit" id="submit" onclick="sendEmail();">
 				</form>
 			</div>
 			<div class="floatChild">
