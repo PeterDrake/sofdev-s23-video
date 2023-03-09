@@ -27,7 +27,7 @@
                 var_dump($date);
                 $datetime = new DateTime($date);
                 $datetime->add(new DateInterval('P7D'));
-                //$date = $datetime->format('Y-m-d');
+                $date = $datetime->format('Y-m-d');
                 var_dump($date);
             }
             echo $file; 
