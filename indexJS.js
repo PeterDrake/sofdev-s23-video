@@ -1,5 +1,3 @@
-src="https://smtpjs.com/v3/smtp.js"
-
 window.addEventListener("DOMContentLoaded",domLoaded);
 
 function domLoaded(){
