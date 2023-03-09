@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            PURE JS FILE UPLOAD EXAMPLE
+        </title>
+    </head>
+    <body>
+        <input id="fileupload" type="file" name="fileupload">
+        <button id="upload-button" onclick="saveFile()">Upload</button>
+        
+        <script>
+            async function saveFile(){
+                let formData = new FormData();
+                formData.append("file", fileupload.files[0]);
+                await fetch('/upload.php', {method: "POST", body: formData});
+                alert('The file has been uploaded successfully.');
+                return 1;
+            }
+        </script>
+    
+    
+    </body>
+</html>
