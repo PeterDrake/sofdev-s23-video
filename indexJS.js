@@ -1,4 +1,6 @@
 window.addEventListener("DOMContentLoaded",domLoaded);
+document.getElementById("Submit").addEventListener("click", emptyArea);
+
 
 function domLoaded(){
     addEmailValidatior();
@@ -21,6 +23,9 @@ function addEmailValidatior(){
         
           }
     });
+
+
+
 }
 
 function sendEmail() {
@@ -37,3 +42,18 @@ function sendEmail() {
     alert("mail sent successfully");
     });
 }
+
+function emptyArea(e) {
+    var validRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    emailField = document.getElementById("email");
+    if (!emailField.value.match(validRegex)) { // .trim is supported by browsers since IE9
+      alert("Please fill all fields");
+      // the conditions were not met, so call preventDefault to 
+      // stop the browsers default behavior of submitting the form
+      e.preventDefault();
+      e.stopPropagation();
+    } else {
+      // If we don't preventDefault, the form will submit after this alert
+      alert("OK")
+    }
+  }
