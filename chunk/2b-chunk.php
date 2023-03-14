@@ -1,8 +1,5 @@
 <?php
 
-ini_set('upload_max_filesize', "1000M");
-ini_set('post_max_size', '1000M');
-
 // (A) HELPER FUNCTION - SERVER RESPONSE
 function verbose ($ok=1, $info="") {
     if ($ok==0) { http_response_code(400); }
