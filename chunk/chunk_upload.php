@@ -1,9 +1,10 @@
 <?php
-$source = 'olivereatapple.mp4';
-$orig_file_size = filesize($source);
-$destination = "uploads/video.mp4";
 
-$chunk_size = 256;
+$source = "timer.mp4";
+$orig_file_size = filesize($source);
+$destination = "uploads/$source";
+
+$chunk_size = 2560;
 $upload_start = 0;
 
 $handle = fopen($source, "rb");

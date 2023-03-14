@@ -34,7 +34,5 @@ bin/www
 package.json
 app.js
 
-chunk/olivereatapple.mp4
-chunk/Shortest.mp4
 chunk/plupload
 chunk/uploads
