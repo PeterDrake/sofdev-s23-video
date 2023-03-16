@@ -36,7 +36,7 @@ const drive = google.drive({
 });
 
 //file path for out file
-const filePath = path.join(__dirname, 'filename.format');
+const filePath = path.join(__dirname, 'filename.format'); // note to self: 'filename.format' should be replaced with a variable contaning the file name
 
 //function to upload the file
 async function uploadFile() {
@@ -59,38 +59,38 @@ async function uploadFile() {
     }
 }  
 
-//delete file function
-async function deleteFile() {
-    try {
-        const response = await drive.files.delete({
-            fileId: 'File_id',// file id
-        });
-        console.log(response.data, response.status);
-    } catch (error) {
-        console.log(error.message);
-    }
-  }
+// //delete file function
+// async function deleteFile() {
+//     try {
+//         const response = await drive.files.delete({
+//             fileId: 'File_id',// file id
+//         });
+//         console.log(response.data, response.status);
+//     } catch (error) {
+//         console.log(error.message);
+//     }
+//   }
 
-  //create a public url
-async function generatePublicUrl() {
-    try {
-        const fileId = '19VpEOo3DUJJgB0Hzj58E6aZAg10MOgmv';
-        //change file permisions to public.
-        await drive.permissions.create({
-            fileId: fileId,
-            requestBody: {
-            role: 'reader',
-            type: 'anyone',
-            },
-        });
+//   //create a public url
+// async function generatePublicUrl() {
+//     try {
+//         const fileId = '19VpEOo3DUJJgB0Hzj58E6aZAg10MOgmv';
+//         //change file permisions to public.
+//         await drive.permissions.create({
+//             fileId: fileId,
+//             requestBody: {
+//             role: 'reader',
+//             type: 'anyone',
+//             },
+//         });
 
-        //obtain the webview and webcontent links
-        const result = await drive.files.get({
-            fileId: fileId,
-            fields: 'webViewLink, webContentLink',
-        });
-      console.log(result.data);
-    } catch (error) {
-      console.log(error.message);
-    }
-  }
+//         //obtain the webview and webcontent links
+//         const result = await drive.files.get({
+//             fileId: fileId,
+//             fields: 'webViewLink, webContentLink',
+//         });
+//       console.log(result.data);
+//     } catch (error) {
+//       console.log(error.message);
+//     }
+//   }
