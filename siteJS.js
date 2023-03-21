@@ -2,6 +2,7 @@ window.addEventListener("DOMContentLoaded",domLoaded);
 
 document.getElementById("submit").addEventListener("click", emptyArea);
 
+import {uploadFile} from './index.js'
 
 function domLoaded(){
     addEmailValidatior();
@@ -59,3 +60,9 @@ function emptyArea(e) {
       e.stopPropagation();
     }
   }
+
+function sendToDrive(){
+  fileLocation = document.getElementById('myFile');
+  uploadFile(fileLocation);
+  console.log("Send Email Code Ran")
+}
