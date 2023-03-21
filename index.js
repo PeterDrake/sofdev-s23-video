@@ -1,7 +1,7 @@
-import { getId } from './pass.js'; //security, info is stored in seperate file
-import { getSecret } from './pass.js';
-import { getUri } from './pass.js';
-import { getRefresh } from './pass.js';
+// import { getId } from './pass.js'; //security, info is stored in seperate file
+// import { getSecret } from './pass.js';
+// import { getUri } from './pass.js';
+// import { getRefresh } from './pass.js';
 let CLIENT_ID = getId();
 let CLIENT_SECRET = getSecret();
 let REDIRECT_URI = getUri();

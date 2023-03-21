@@ -1,4 +1,4 @@
-import {uploadFile} from './index.js'
+//import {uploadFile} from './index.js'
 
 window.addEventListener("DOMContentLoaded",domLoaded);
 
@@ -7,7 +7,7 @@ document.getElementById("submit").addEventListener("click", emptyArea);
 
 function domLoaded(){
     addEmailValidatior();
-    document.getElementById("driveButton").addEventListener("click", sendToDrive);
+    //  document.getElementById("driveButton").addEventListener("click", sendToDrive);
 }
 
 function addEmailValidatior(){
@@ -64,7 +64,7 @@ function emptyArea(e) {
   }
 
 
-
+//TODO: Get this to work
 function sendToDrive(){
   console.log("Send Email Code Running")
   fileLocation = document.getElementById('myFile');
