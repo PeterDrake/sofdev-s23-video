@@ -1,3 +1,12 @@
+import { getId } from './pass.js'; //security, info is stored in seperate file
+let CLIENT_ID = getId();
+import { getSecret } from './pass.js';
+let CLIENT_SECRET = getSecret();
+import { getUri } from './pass.js';
+let REDIRECT_URI = getUri();
+import { getRefresh } from './pass.js';
+let REFRESH_TOKEN = getRefresh(); 
+
 //googleapis
 const { google } = require('googleapis');
 
@@ -6,18 +15,7 @@ const path = require('path');
 
 //file system module
 const fs = require('fs');
-
-//client id
-const CLIENT_ID = '299953909161-q0lpk7u63j953daudlr6nj7te7veijrt.apps.googleusercontent.com'
-
-//client secret
-const CLIENT_SECRET = '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';
-
-//redirect URL
-const REDIRECT_URI = 'https://developers.google.com/oauthplayground';
-
-//refresh token
-const REFRESH_TOKEN = '1//04gXF1PQwvJHICgYIARAAGAQSNwF-L9Irp-XJ8k8oLp9unsd6DKSnQ5hutu2qGlt8MBjRfJwOmgJWtUyygxJ4J83YiTFIhLO_GjU'
+const { PassThrough } = require('stream');
 
 //intialize auth client
 const oauth2Client = new google.auth.OAuth2(

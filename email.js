@@ -1,3 +1,6 @@
+import { getPassToken } from './pass.js'; //security, info is stored in seperate file
+let passToken = getPassToken();
+
 var http = require('http');
 http.createServer(function (req, res) {
     //beginning of email code
@@ -7,7 +10,7 @@ var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: 'lc.compressor@gmail.com',
-    pass: 'xhbpmisdwubcowqz'
+    pass: passToken
   }
 });
 
