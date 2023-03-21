@@ -14,13 +14,13 @@
 		<h1>Lewis & Clark College Video Compressor Service</h1>
 		<div class="floatContainer">
 			<div class="floatChild">
-				<form action="comp.php" method="post">
+				<form action="comp.php" method="post" enctype="multipart/form-data">
 					<p>
 					<p>Please enter your name and email:</p>
 					<input type="text" id="fName" name="f_name" size="30" required placeholder="first name"><br>
 					<input type="text" id="lName" name="l_name" size="30" required placeholder="last name"><br>
 					<input type="email" id="email" name="e_mail" size="30" required placeholder="email">
-					<input type="file" id="myFile" name="filename" accept="video/*">
+					<input type="file" id="video" name="video" accept="video/*">
 
 					<p>Please select your due date:</p>
 					<p>
