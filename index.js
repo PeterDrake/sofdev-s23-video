@@ -1,10 +1,10 @@
 import { getId } from './pass.js'; //security, info is stored in seperate file
-let CLIENT_ID = getId();
 import { getSecret } from './pass.js';
-let CLIENT_SECRET = getSecret();
 import { getUri } from './pass.js';
-let REDIRECT_URI = getUri();
 import { getRefresh } from './pass.js';
+let CLIENT_ID = getId();
+let CLIENT_SECRET = getSecret();
+let REDIRECT_URI = getUri();
 let REFRESH_TOKEN = getRefresh(); 
 
 //googleapis

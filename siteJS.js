@@ -1,11 +1,13 @@
+import {uploadFile} from './index.js'
+
 window.addEventListener("DOMContentLoaded",domLoaded);
 
 document.getElementById("submit").addEventListener("click", emptyArea);
 
-import {uploadFile} from './index.js'
 
 function domLoaded(){
     addEmailValidatior();
+    document.getElementById("driveButton").addEventListener("click", sendToDrive);
 }
 
 function addEmailValidatior(){
@@ -61,7 +63,10 @@ function emptyArea(e) {
     }
   }
 
+
+
 function sendToDrive(){
+  console.log("Send Email Code Running")
   fileLocation = document.getElementById('myFile');
   uploadFile(fileLocation);
   console.log("Send Email Code Ran")
