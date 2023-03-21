@@ -37,15 +37,15 @@ const drive = google.drive({
 const filePath = path.join(__dirname, 'filename.format'); // note to self: 'filename.format' should be replaced with a variable contaning the file name
 
 //function to upload the file
-async function uploadFile() {
+async function uploadFile(fineName) {
     try{
       const response = await drive.files.create({
             requestBody: {
-                name: 'hero.png', //file name
-                mimeType: 'image/png',
+                name: filename, //file name
+                mimeType: 'video/mp4',
             },
             media: {
-                mimeType: 'image/png',
+                mimeType: 'video/mp4',
                 body: fs.createReadStream(filePath),
             },
         });  
