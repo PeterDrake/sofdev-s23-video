@@ -28,8 +28,14 @@
             $target_file = $upload_dir . DIRECTORY_SEPARATOR . $filename;
 
             if (move_uploaded_file($file, $target_file)) {
+                if($size == 'Small') {
+                    $size = 'H.265 MKV 480p30';
+                } else if($size == 'Medium') {
+                    $size = 'H.265 MKV 720p30';
+                } else if($size == 'Large') {
+                    $size = 'H.265 MKV 1080p30';
+                }
                 if($date != 'asap') {
-
                     $date = $_POST['date_due'];
                 }
                 else{
