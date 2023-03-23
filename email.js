@@ -31,4 +31,4 @@ transporter.sendMail(mailOptions, function(error, info){
 //end of email code
 }).listen(1337, "127.0.0.1");
 console.log('Server running at http://127.0.0.1:1337/');
-//run "node /thisFileLocation", then open 127.0.0.1;1337 in web browser to send email
+//run "node /thisFileLocation", then open 127.0.0.1:1337 in web browser to send email
