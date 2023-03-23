@@ -1,5 +1,4 @@
-import { getPassToken } from './pass.js'; //security, info is stored in seperate file
-let passToken = getEmailPassToken();
+let passToken = getEmailPassToken(); //grab from pass.js
 
 var http = require('http');
 http.createServer(function (req, res) {
@@ -16,7 +15,7 @@ var transporter = nodemailer.createTransport({
 
 var mailOptions = {
   from: 'lc.compressor@gmail.com',
-  to: 'lc.compressor@gmail.com',
+  to: 'lc.compressor@gmail.com', //hardcoded to email iself, update with var later
   subject: 'Sending Email using Node.js',
   text: 'That was easy!'
 };
