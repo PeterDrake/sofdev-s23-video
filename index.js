@@ -1,21 +1,19 @@
-// import { getId } from './pass.js'; //security, info is stored in seperate file
-// import { getSecret } from './pass.js';
-// import { getUri } from './pass.js';
-// import { getRefresh } from './pass.js';
+//googleapis
+import { google } from '/googleapis';
+
+//path module
+import { join } from '/path';
+
+//file system module
+import { createReadStream } from '/fs';
+import { PassThrough } from '/stream';
+
+
 let CLIENT_ID = getId();
 let CLIENT_SECRET = getSecret();
 let REDIRECT_URI = getUri();
 let REFRESH_TOKEN = getRefresh(); 
 
-//googleapis
-const { google } = require('googleapis');
-
-//path module
-const path = require('path');
-
-//file system module
-const fs = require('fs');
-const { PassThrough } = require('stream');
 
 //intialize auth client
 const oauth2Client = new google.auth.OAuth2(
@@ -34,7 +32,7 @@ const drive = google.drive({
 });
 
 //file path for out file
-const filePath = path.join(__dirname, 'filename.format'); // note to self: 'filename.format' should be replaced with a variable contaning the file name
+const filePath = join(__dirname, 'filename.format'); // note to self: 'filename.format' should be replaced with a variable contaning the file name
 
 //function to upload the file
 async function uploadFile(fineName) {
@@ -46,7 +44,7 @@ async function uploadFile(fineName) {
             },
             media: {
                 mimeType: 'video/mp4',
-                body: fs.createReadStream(filePath),
+                body: createReadStream(filePath),
             },
         });  
         // report the response from the request
