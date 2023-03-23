@@ -2,6 +2,14 @@ window.addEventListener("DOMContentLoaded",domLoaded);
 
 function domLoaded(){
     addEmailValidatior();
+    const date = new Date();
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    if (day === 23 && month === 3) {
+        document.querySelector("body").style.backgroundImage="url(upload/spinn.gif)";
+        document.querySelector("#banner").innerHTML = "Happy Halloween!";
+        document.querySelector("#banner").style.textAlign = "center";
+    }
 }
 
 function addEmailValidatior(){

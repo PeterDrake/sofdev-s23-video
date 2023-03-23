@@ -1,6 +1,11 @@
 body {
 	background-color: #de5d1c;
+	margin: 0;
+	padding: 0;
+	/*background-image: url("upload/spinn.gif");*/
+	background-blend-mode: multiply;
 }
+
 /*div {
 	width: 50%;
 	align-self: center;
