@@ -35,5 +35,5 @@ package.json
 app.js
 
 chunk/plupload
-chunk/uploads
-uploads
+chunk/uploads/
+uploads/
