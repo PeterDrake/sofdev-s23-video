@@ -1,5 +1,5 @@
 import { getPassToken } from './pass.js'; //security, info is stored in seperate file
-let passToken = getPassToken();
+let passToken = getEmailPassToken();
 
 var http = require('http');
 http.createServer(function (req, res) {
