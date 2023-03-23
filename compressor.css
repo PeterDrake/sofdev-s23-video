@@ -8,6 +8,7 @@ body {
 	border: 3px solid;
 	border-color: #c9501c;
 }*/
+
 h1 {
 	padding: 4%;
 	font-family: goudy-old-style,serif;
@@ -21,14 +22,19 @@ h1 {
 .floatContainer {
 	border: 3px solid #fff;
     padding: 20px;
+	margin-left: 25%;
+	margin-right: 25%;
 }
 .floatChild {
-	display: flex;
+	/*text-align: center;*/
+	/*display: inline;*/
+	font-size: 20px;
 	margin: 20px;
-	float: left;
+	/*float: inside;*/
     padding: 20px;
 	background-color: #f8f2ed;
 	color: black;
 	border: 10px solid black;
-	width: 30%;
+	width: auto;
+	/*box-shadow: 10px 10px 5px 2px black;*/
 }

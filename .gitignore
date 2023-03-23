@@ -33,3 +33,6 @@ routes/index.js
 bin/www
 package.json
 app.js
+
+chunk/plupload
+chunk/uploads
