@@ -25,7 +25,6 @@
             $filesize = $_FILES['video']['size'];
             $upload_dir = 'uploads';
             $target_file = $upload_dir . DIRECTORY_SEPARATOR . $filename;
-
             if (move_uploaded_file($file, $target_file)) {
                 if($size == 'small') {
                     $size = 'H.265 MKV 480p30';
@@ -38,7 +37,6 @@
                     $date = $_POST['date_due'];
                 }
                 else{
-
                     $date = date('Y-m-d');
                     $datetime = new DateTime($date);
                     $datetime->add(new DateInterval('P7D'));
