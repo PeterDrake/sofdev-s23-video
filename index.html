@@ -19,7 +19,7 @@
 					<p>Please enter your name and email:</p>
 					<input type="text" id="fName" name="f_name" size="30" required placeholder="first name"><br>
 					<input type="text" id="lName" name="l_name" size="30" required placeholder="last name"><br>
-					<input type="email" id="email" name="e_mail" size="30" required placeholder="email">
+					<input type="email" id="email" name="e_mail" size="30" required placeholder="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Invalid email address">
 
 					<p>Select video to upload:</p>
 					<input type="file" id="video" name="video" accept="video/*">
