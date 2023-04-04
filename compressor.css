@@ -1,9 +1,8 @@
 body {
-	background-color: #de5d1c;
-	margin: 0;
-	padding: 0;
-	/*background-image: url("upload/spinn.gif");*/
+	background-color: #f18a29;
 	background-blend-mode: multiply;
+	font-family: Palatino, serif;
+	color: #4E4E4E;
 }
 
 /*div {
@@ -20,26 +19,57 @@ h1 {
     font-weight: 400;
     font-size: 80px;
     line-height: .94;
-    color: #de5d1c;
     background-color: black;
     border: 10px solid grey;
 }
 .floatContainer {
-	border: 3px solid #fff;
-    padding: 20px;
-	margin-left: 25%;
-	margin-right: 25%;
+	border: 5px solid rgba(255,255,255,.5);
+    padding: 5px;
+	margin-left: 5%;
+	margin-right: 5%;
 }
 .floatChild {
-	/*text-align: center;*/
-	/*display: inline;*/
 	font-size: 20px;
-	margin: 20px;
-	/*float: inside;*/
-    padding: 20px;
+	margin: 5px;
+    padding: 10px;
 	background-color: #f8f2ed;
-	color: black;
-	border: 10px solid black;
+	border: 5px solid rgba(0,0,0,.5);
 	width: auto;
-	/*box-shadow: 10px 10px 5px 2px black;*/
+}
+
+.blurb {
+	text-align: center;
+}
+
+#submit {
+	font-size: 50px;
+	font-family: Garamond, serif;
+	text-align: center;
+	margin-left: 42%;
+	font-weight: bold;
+	color: #4E4E4E;
+	border: 2px solid black;
+	background-color: #FFFBF3;
+}
+
+#submit:hover {
+	background-color: #f18a29;
+}
+
+/*Aurelio Adds*/
+.Header_Text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-family: Garamond, serif;
+	font-size: 50px;
+	font-weight: bold;
+}
+
+.container {
+	position: relative;
+	text-align: center;
+	color: white;
+	padding: 20px;
 }

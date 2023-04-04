@@ -11,8 +11,16 @@
 	</head>
 
 	<body>
-		<h1 id="banner">Lewis & Clark College Video Compressor Service</h1>
+		<div class="container">
+			<img src="CompressionHeader.png" alt="Compression Logo" style="width:100%;">
+			<div class="Header_Text">LC Video Compression</div>
+		</div>
 		<div class="floatContainer">
+			<div class="floatChild">
+				<p class="blurb">Welcome to the Lewis & Clark College Video Compression Service!
+					Please upload the video(s) you would like to be compressed.<br>
+					Once the compression is completed, you will receive an email with a link to download the compressed videos.</p>
+			</div>
 			<div class="floatChild">
 				<form action="comp.php" method="post" enctype="multipart/form-data">
 					<p>
@@ -21,10 +29,10 @@
 					<input type="text" id="lName" name="l_name" size="30" required placeholder="last name"><br>
 					<input type="email" id="email" name="e_mail" size="30" required placeholder="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Invalid email address">
 
-					<p>Select video to upload:</p>
+					<br><br><br><p>Select video to upload:</p>
 					<input type="file" id="video" name="video" accept="video/*">
 
-					<p>Please select your due date:</p>
+					<br><br><br><p>Please select your due date:</p>
 					<p>
 						<input type="radio" id="choose" name="choose_date" value="choose">
 						<label for="choose"><input type="date" name="date_due" id="dateDue"></label><br>
@@ -32,7 +40,7 @@
 						<label for="asap">ASAP</label>
 					</p>
 
-					<p>Please select your desired file size for the completed compressed video:</p>
+					<br><p>Please select your desired file size for the completed compressed video:</p>
 					<p>
 						<input type="radio" id="small" name="desired_size" value="small">
 						<label for="small">Small</label><br>
@@ -42,11 +50,8 @@
 						<label for="large">Large</label>
 					</p>
 					</p>
-					<input type ="submit" value="submit" id="submit" onclick="sendEmail();">
+					<br><input type ="submit" value="Submit" id="submit" onclick="sendEmail();">
 				</form>
-			</div>
-			<div class="floatChild">
-				<p>qdhvdpciuqdwbqpwdiucbpasdicubqwpdciuasbcpw</p>
 			</div>
 		</div>
 	</body>

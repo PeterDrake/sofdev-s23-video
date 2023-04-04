@@ -10,8 +10,7 @@ function domLoaded(){
     let month = date.getMonth() + 1;
     if (day === 31 && month === 10) {
         document.querySelector("body").style.backgroundImage="url(upload/spinn.gif)";
-        document.querySelector("#banner").innerHTML = "Happy Halloween!";
-        document.querySelector("#banner").style.textAlign = "center";
+        document.querySelector(".Header_Text").innerHTML = "Happy Halloween!";
     }
 }
 
