@@ -11,6 +11,7 @@
     <!--Add buttons to initiate auth sequence and sign out-->
     <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
     <button id="signout_button" onclick="handleSignoutClick()">Sign Out</button>
+    <button id="upload_button" onclick="">Upload</button>
 
     <pre id="content" style="white-space: pre-wrap;"></pre>
 
@@ -29,11 +30,12 @@
 
       // Authorization scopes required by the API; multiple scopes can be
       // included, separated by spaces.
-      const SCOPES = 'https://www.googleapis.com/auth/drive.metadata.readonly';
+      const SCOPES = 'https://www.googleapis.com/auth/drive.metadata.readonly https://www.googleapis.com/auth/drive.file';
 
       let tokenClient;
       let gapiInited = false;
       let gisInited = false;
+      let jwt = getKey();
 
       document.getElementById('authorize_button').style.visibility = 'hidden';
       document.getElementById('signout_button').style.visibility = 'hidden';
@@ -93,14 +95,16 @@
           await listFiles();
         };
 
-        if (gapi.client.getToken() === null) {
-          // Prompt the user to select a Google Account and ask for consent to share their data
-          // when establishing a new session.
-          tokenClient.requestAccessToken({prompt: 'consent'});
-        } else {
-          // Skip display of account chooser and consent dialog for an existing session.
-          tokenClient.requestAccessToken({prompt: ''});
-        }
+        jwt.authorize();
+
+        // if (gapi.client.getToken() === null) {
+        //   // Prompt the user to select a Google Account and ask for consent to share their data
+        //   // when establishing a new session.
+        //   tokenClient.requestAccessToken({prompt: 'consent'});
+        // } else {
+        //   // Skip display of account chooser and consent dialog for an existing session.
+        //   tokenClient.requestAccessToken({prompt: ''});
+        // }
       }
 
       /**

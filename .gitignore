@@ -36,3 +36,4 @@ app.js
 
 # Security and password storage
 pass.js
+auth.json
