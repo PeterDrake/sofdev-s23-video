@@ -68,8 +68,5 @@
                         </form></div></div>';
             }
         ?>
-//         <form action="index.html">
-//             <input type="submit" value="Return to Homepage" class="submit">
-//         </form>
     </body>
 </html>
