@@ -1,5 +1,5 @@
 // index.js
-import scanFolderForFiles from './scan';
+const scanFolderForFiles = require('./scan');
 
 scanFolderForFiles('local-folder').then(() => {
   console.log('🔥 All files have been uploaded to Google Drive successfully!');

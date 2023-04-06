@@ -1,11 +1,9 @@
 // service.js
-import { google } from 'googleapis';
-import { join } from 'path';
-
-let key = getKey();
+const { google } = require('googleapis');
+const path = require('path');
 
 const getDriveService = () => {
-  const KEYFILEPATH = join(__dirname, key);
+  const KEYFILEPATH = path.join(__dirname, 'auth.json');
   const SCOPES = ['https://www.googleapis.com/auth/drive'];
 
   const auth = new google.auth.GoogleAuth({
@@ -16,4 +14,4 @@ const getDriveService = () => {
   return driveService;
 };
 
-export default getDriveService;
+module.exports = getDriveService;
