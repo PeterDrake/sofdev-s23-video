@@ -55,21 +55,24 @@
                 echo 'File upload failed.';
             }
         ?>
-        <h1 id="timer"></h1>
-        <script>
-            let timer = document.getElementById("timer");
-            let time = 5;
-
-            var countdown = setInterval(function() {
-                if (time <= 0) {
-                    clearInterval(countdown);
-                }
-                timer.innerHTML = `You will be redirected in ${time} seconds.`;
-                time -= 1;
-            }, 1000);
-            <?php
-                header("Refresh:6; url=index.html");
-            ?>
-        </script>
+        <form action="index.html">
+            <input type="submit" value="Return to Homepage" class="submit">
+        </form>
+//         <h1 id="timer"></h1>
+//         <script>
+//             let timer = document.getElementById("timer");
+//             let time = 5;
+//
+//             var countdown = setInterval(function() {
+//                 if (time <= 0) {
+//                     clearInterval(countdown);
+//                 }
+//                 timer.innerHTML = `You will be redirected in ${time} seconds.`;
+//                 time -= 1;
+//             }, 1000);
+//             <?php
+//                 header("Refresh:6; url=index.html");
+//             ?>
+//         </script>
     </body>
 </html>
