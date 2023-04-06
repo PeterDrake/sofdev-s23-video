@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang = "en">
     <head>
         <title>Video Compressor - Upload Successful</title>
@@ -42,11 +42,9 @@
                     $datetime->add(new DateInterval('P7D'));
                     $date = $datetime->format('Y-m-d');
                 }
-                //echo $file;
 
                 $sql = "INSERT INTO `compressaur` (`FirstName`, `LastName`, `Email`, `FileLocation`, `DesiredSize`, `DueDate`) VALUES ('$firstName', '$lastName', '$email', '$filename', '$size', '$date')";
                 $rs = mysqli_query($con, $sql);
-                //echo '<p>Thank you ' . $firstName . ', your video has been successfully uploaded.</p>';
                 if($rs){
                    echo "<h2>Successful Upload</h2>";
                 }
@@ -56,24 +54,22 @@
             } else {
                 echo 'File upload failed.';
             }
-
-            ?>
-    <h1 id="timer"></h1>
-    <script>
-        let timer = document.getElementById("timer");
-        let time = 5;
-
-        var countdown = setInterval(function() {
-            if (time <= 0) {
-                clearInterval(countdown);
-            }
-            timer.innerHTML = `You will be redirected in ${time} seconds.`;
-            time -= 1;
-        }, 1000);
-        <?php
-            header("Refresh:6; url=index.html");
         ?>
-    </script>
+        <h1 id="timer"></h1>
+        <script>
+            let timer = document.getElementById("timer");
+            let time = 5;
+
+            var countdown = setInterval(function() {
+                if (time <= 0) {
+                    clearInterval(countdown);
+                }
+                timer.innerHTML = `You will be redirected in ${time} seconds.`;
+                time -= 1;
+            }, 1000);
+            <?php
+                header("Refresh:6; url=index.html");
+            ?>
+        </script>
     </body>
 </html>
-<!--    header("Refresh:5; url=index.html");-->
