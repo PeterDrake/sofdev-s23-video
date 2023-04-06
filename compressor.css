@@ -5,14 +5,6 @@ body {
 	color: #4E4E4E;
 }
 
-/*div {
-	width: 50%;
-	align-self: center;
-	text-align: left;
-	border: 3px solid;
-	border-color: #c9501c;
-}*/
-
 h1 {
 	padding: 4%;
 	font-family: goudy-old-style,serif;
@@ -22,13 +14,15 @@ h1 {
     background-color: black;
     border: 10px solid grey;
 }
-.floatContainer {
+
+.bodyParagraphs {
 	border: 5px solid rgba(255,255,255,.5);
     padding: 5px;
 	margin-left: 5%;
 	margin-right: 5%;
 }
-.floatChild {
+
+.paragraph {
 	font-size: 20px;
 	margin: 5px;
     padding: 10px;
@@ -67,7 +61,7 @@ h1 {
 	font-weight: bold;
 }
 
-.container {
+.header {
 	position: relative;
 	text-align: center;
 	color: white;

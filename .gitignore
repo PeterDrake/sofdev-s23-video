@@ -33,6 +33,8 @@ routes/index.js
 bin/www
 package.json
 app.js
+node_modules/
+package-lock.json
 
 chunk/plupload
 chunk/uploads/
