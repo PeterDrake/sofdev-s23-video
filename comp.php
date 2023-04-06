@@ -46,13 +46,13 @@
                 $sql = "INSERT INTO `compressaur` (`FirstName`, `LastName`, `Email`, `FileLocation`, `DesiredSize`, `DueDate`) VALUES ('$firstName', '$lastName', '$email', '$filename', '$size', '$date')";
                 $rs = mysqli_query($con, $sql);
                 if($rs){
-                   echo "<h2>Successful Upload</h2>";
+                   echo '<div class="bodyParagraphs"><div class="paragraph">Successful Upload</div></div>';
                 }
                 else{
-                    echo "SQL failed";
+                    echo '<div class="bodyParagraphs"><div class="paragraph">SQL failed</div></div>';
                 }
             } else {
-                echo 'File upload failed.';
+                echo '<div class="bodyParagraphs"><div class="paragraph">File upload failed.</div></div>';
             }
         ?>
         <form action="index.html">
