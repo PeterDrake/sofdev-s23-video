@@ -50,6 +50,10 @@ h1 {
 	background-color: #f18a29;
 }
 
+#submit {
+	margin-left: 42%;
+}
+
 /*Aurelio Adds*/
 .Header_Text {
 	position: absolute;

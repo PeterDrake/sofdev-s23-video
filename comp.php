@@ -8,6 +8,10 @@
     </head>
 
     <body>
+        <div class="header">
+            <img src="usedMedia/CompressionHeader.png" alt="Compression Logo" style="width:100%;">
+            <div class="Header_Text">LC Video Compression</div>
+        </div>
         <?php
             ini_set('display_errors', 1);
             ini_set('display_startup_errors', 1);
@@ -46,17 +50,26 @@
                 $sql = "INSERT INTO `compressaur` (`FirstName`, `LastName`, `Email`, `FileLocation`, `DesiredSize`, `DueDate`) VALUES ('$firstName', '$lastName', '$email', '$filename', '$size', '$date')";
                 $rs = mysqli_query($con, $sql);
                 if($rs){
-                   echo '<div class="bodyParagraphs"><div class="paragraph">Successful Upload</div></div>';
+                    echo '<div class="bodyParagraphs"><div class="paragraph">Video uploaded successfully.
+                            <form action="index.html">
+                                <input type="submit" value="Return to Homepage" class="submit" id="redirectButton">
+                            </form></div></div>';
                 }
                 else{
-                    echo '<div class="bodyParagraphs"><div class="paragraph">SQL failed</div></div>';
+                    echo '<div class="bodyParagraphs"><div class="paragraph">SQL failed.
+                            <form action="index.html">
+                                <input type="submit" value="Return to Homepage" class="submit" id="redirectButton">
+                            </form></div></div>';
                 }
             } else {
-                echo '<div class="bodyParagraphs"><div class="paragraph">File upload failed.</div></div>';
+                echo '<div class="bodyParagraphs"><div class="paragraph">File upload failed.
+                        <form action="index.html">
+                            <input type="submit" value="Return to Homepage" class="submit" id="redirectButton">
+                        </form></div></div>';
             }
         ?>
-        <form action="index.html">
-            <input type="submit" value="Return to Homepage" class="submit">
-        </form>
+//         <form action="index.html">
+//             <input type="submit" value="Return to Homepage" class="submit">
+//         </form>
     </body>
 </html>
