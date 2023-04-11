@@ -1,4 +1,10 @@
 // requiring path and fs modules
+
+//pm2 start print.js --restart-delay=300000 sets 5 minute delay
+// pm2 log
+// pm2 list
+// pm2 delete 0
+
 const path = require('path');
 const fs = require('fs');
 const { brotliCompress } = require('zlib');
@@ -76,4 +82,6 @@ function compress(information){
     hbjs.spawn(options)
         .on('error', console.error)
         .on('output', console.log)
+
+    console.log("Finished");
 }
