@@ -8,6 +8,7 @@
 const path = require('path');
 const fs = require('fs');
 const { brotliCompress } = require('zlib');
+const { error } = require('console');
 
 const directoryPath = path.join(__dirname, 'input');
 
@@ -90,5 +91,5 @@ function compress(information){
 
 function complete(){
     console.log("We win");
-    process.exit();
+    throw new error("program is over, go home");
 }
