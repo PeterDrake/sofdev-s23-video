@@ -1,92 +1,53 @@
-//googleapis
-import { google } from '/googleapis';
+const fs = require('fs');
+const readline = require('readline');
+const {google} = require('googleapis');
 
-//path module
-import { join } from '/path';
+// service account key file. not on git (sorry hackers)
+const KEYFILEPATH = 'auth.json';
 
-//file system module
-import { createReadStream } from '/fs';
-import { PassThrough } from '/stream';
+// gives full access to google drive account
+const SCOPES = ['https://www.googleapis.com/auth/drive'];
 
+// init the auth thingy with the keyfile and the scope
+const auth = new google.auth.GoogleAuth({
+  keyFile: KEYFILEPATH,
+  scopes: SCOPES
+})
 
-let CLIENT_ID = getId();
-let CLIENT_SECRET = getSecret();
-let REDIRECT_URI = getUri();
-let REFRESH_TOKEN = getRefresh(); 
+async function createAndUploadFile(auth){
 
+  // init the drive service, it handles calls to the api
+  const driveService = google.drive({version:'v3', auth});
 
-//intialize auth client
-const oauth2Client = new google.auth.OAuth2(
-    CLIENT_ID,
-    CLIENT_SECRET,
-    REDIRECT_URI
-);
+  // metadata for the new file on the dive
+  let fileMetaData = {
+    'name': 'testFile.jpg',
+    'parents': ['1gvlj5M577gvG7qU5VQo54xx9fubF0AqN']
+  }
 
-//setting our auth credentials
-oauth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
+  let media = {
+    mimeType: 'image/jpg',
+    body: fs.createReadStream('testFile.jpg')
+  }
 
-//initialize google drive
-const drive = google.drive({
-    version: 'v3',
-    auth: oauth2Client,
-});
+  // make a request
+  let response = await driveService.files.create({
+    resource: fileMetaData,
+    media: media,
+    fields: 'id'
+  })
 
-//file path for out file
-const filePath = join(__dirname, 'filename.format'); // note to self: 'filename.format' should be replaced with a variable contaning the file name
-
-//function to upload the file
-async function uploadFile(fineName) {
-    try{
-      const response = await drive.files.create({
-            requestBody: {
-                name: filename, //file name
-                mimeType: 'video/mp4',
-            },
-            media: {
-                mimeType: 'video/mp4',
-                body: createReadStream(filePath),
-            },
-        });  
-        // report the response from the request
-        console.log(response.data);
-    }catch (error) {
-        //report the error message
-        console.log(error.message);
-    }
-}  
-
-// //delete file function
-// async function deleteFile() {
-//     try {
-//         const response = await drive.files.delete({
-//             fileId: 'File_id',// file id
-//         });
-//         console.log(response.data, response.status);
-//     } catch (error) {
-//         console.log(error.message);
-//     }
-//   }
-
-//   //create a public url
-// async function generatePublicUrl() {
-//     try {
-//         const fileId = '19VpEOo3DUJJgB0Hzj58E6aZAg10MOgmv';
-//         //change file permisions to public.
-//         await drive.permissions.create({
-//             fileId: fileId,
-//             requestBody: {
-//             role: 'reader',
-//             type: 'anyone',
-//             },
-//         });
-
-//         //obtain the webview and webcontent links
-//         const result = await drive.files.get({
-//             fileId: fileId,
-//             fields: 'webViewLink, webContentLink',
-//         });
-//       console.log(result.data);
-//     } catch (error) {
-//       console.log(error.message);
-//     }
-//   }
+  // handle the response
+  switch(response.status){
+    case 200:
+      console.log('File created, its id is:', response.data.id)
+      break;
+    
+    default:
+      console.error('Error creating files, ' + response.errors)
+      break;
+    
+  }
+}
+//console.log(JSON.parse('{"web":{"client_id":"299953909161-g27a7bs2o612vbk9q3r6s3q22srjp0oc.apps.googleusercontent.com","project_id":"lc-compression-storage","auth_uri":"https://accounts.google.com/o/oauth2/auth","token_uri":"https://oauth2.googleapis.com/token","auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs","client_secret":"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","javascript_origins":["http://localhost"]}}'));
+createAndUploadFile(auth).catch(console.error);
