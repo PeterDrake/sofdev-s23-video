@@ -1,6 +1,7 @@
 // requiring path and fs modules
 const path = require('path');
 const fs = require('fs');
+const { brotliCompress } = require('zlib');
 
 const directoryPath = path.join(__dirname, 'input');
 
@@ -56,5 +57,23 @@ function sortByDate(result){
         return new Date(a.DueDate) - new Date(b.DueDate);
     });
 
-    console.log(result);
+    compress(result[0])
+}
+
+function compress(information){
+    const path = require('path');
+    const filename = information.FileLocation;
+
+
+    const hbjs = require('handbrake-js')
+
+    const options = {
+        input: 'input/'+information.FileLocation,
+        output: 'output/'+ path.parse(filename).name + '.mp4';
+        preset: information.DesiredSize
+    }
+
+    hbjs.spawn(options)
+        .on('error', console.error)
+        .on('output', console.log)
 }
