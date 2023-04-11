@@ -69,7 +69,7 @@ function compress(information){
 
     const options = {
         input: 'input/'+information.FileLocation,
-        output: 'output/'+ path.parse(filename).name + '.mp4';
+        output: 'output/'+ path.parse(filename).name + '.mp4',
         preset: information.DesiredSize
     }
 
