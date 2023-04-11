@@ -64,6 +64,7 @@ function sortByDate(result){
     });
 
     compress(result[0])
+    console.log("finished");
 }
 
 function compress(information){
