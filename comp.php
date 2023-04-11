@@ -64,7 +64,9 @@
             } else {
                 echo '<div class="bodyParagraphs"><div class="paragraph">
                         <form action="index.html">
-                            <input type="submit" value="Return to Homepage" class="submit" id="redirectButton">
+                            <p>
+                                <input type="submit" value="Return to Homepage" class="submit" id="redirectButton">
+                            </p>
                         </form></div></div>';
             }
         ?>
