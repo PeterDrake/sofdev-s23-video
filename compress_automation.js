@@ -84,13 +84,12 @@ function compress(information){
     hbjs.spawn(options)
         .on('error', console.error)
         .on('output', console.log)
-        .on("complete", complete)
+        .on("complete", complete(information.FileLocation))
 
     //print
 }
 
-function complete(){
+function complete(filename){
     console.log("We win");
     process.exit("closing time by semisonic");
-    throw new error("program is over, go home");
 }
