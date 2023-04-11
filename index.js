@@ -41,7 +41,8 @@ async function createAndUploadFile(auth, fileName){
   // handle the response
   switch(response.status){
     case 200:
-      console.log('File created, its id is:', response.data.id)
+      console.log('File created, its share link is: https://drive.google.com/file/d/'+response.data.id+'/view?usp=share_link')
+
       break;
     
     default:
@@ -55,3 +56,5 @@ async function createAndUploadFile(auth, fileName){
 function uploadFileToDrive(fileName){
   createAndUploadFile(auth, fileName);
 }
+
+uploadFileToDrive("testVid.mp4")
