@@ -62,7 +62,7 @@
                             </form></div></div>';
                 }
             } else {
-                echo '<div class="bodyParagraphs"><div class="paragraph">
+                echo '<div class="bodyParagraphs"><div class="paragraph">File upload failed.
                         <form action="index.html">
                             <p>
                                 <input type="submit" value="Return to Homepage" class="submit" id="redirectButton">
