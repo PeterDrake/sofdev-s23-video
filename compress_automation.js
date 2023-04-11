@@ -45,6 +45,5 @@ function doEverythingElse(files) {
             console.log(result);
         });
     });
-
+    console.log(JSON.parse(result));
 }
-console.log(JSON.parse(result));
