@@ -83,6 +83,11 @@ function compress(information){
     hbjs.spawn(options)
         .on('error', console.error)
         .on('output', console.log)
+        .on("complete", complete())
 
     //print
+}
+
+function complete(){
+    console.log("We win");
 }
