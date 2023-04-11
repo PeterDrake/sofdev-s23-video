@@ -39,7 +39,6 @@ h1 {
 	font-size: 50px;
 	font-family: Garamond, serif;
 	text-align: center;
-	margin-left: 42%;
 	font-weight: bold;
 	color: #4E4E4E;
 	border: 2px solid black;
@@ -50,8 +49,12 @@ h1 {
 	background-color: #f18a29;
 }
 
+#originalSubmit {
+	margin-left: 42%;
+}
+
 #redirectButton {
-	margin-left: 25%;
+	margin-left: 42%;
 }
 
 /*Aurelio Adds*/

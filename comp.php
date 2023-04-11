@@ -50,19 +50,19 @@
                 $sql = "INSERT INTO `compressaur` (`FirstName`, `LastName`, `Email`, `FileLocation`, `DesiredSize`, `DueDate`) VALUES ('$firstName', '$lastName', '$email', '$filename', '$size', '$date')";
                 $rs = mysqli_query($con, $sql);
                 if($rs){
-                    echo '<div class="bodyParagraphs"><div class="paragraph">Video uploaded successfully.<br>
+                    echo '<div class="bodyParagraphs"><div class="paragraph">Video uploaded successfully.
                             <form action="index.html">
                                 <input type="submit" value="Return to Homepage" class="submit" id="redirectButton">
                             </form></div></div>';
                 }
                 else{
-                    echo '<div class="bodyParagraphs"><div class="paragraph">SQL failed.<br>
+                    echo '<div class="bodyParagraphs"><div class="paragraph">SQL failed.
                             <form action="index.html">
                                 <input type="submit" value="Return to Homepage" class="submit" id="redirectButton">
                             </form></div></div>';
                 }
             } else {
-                echo '<div class="bodyParagraphs"><div class="paragraph">Fiddlesticks.<br>
+                echo '<div class="bodyParagraphs"><div class="paragraph">Fiddlesticks.
                         <form action="index.html">
                             <input type="submit" value="Return to Homepage" class="submit" id="redirectButton">
                         </form></div></div>';
