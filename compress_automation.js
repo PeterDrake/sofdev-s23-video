@@ -54,4 +54,6 @@ function sortByDate(result){
     result.sort(function(a, b) {
         return parseFloat(a.DueDate) - parseFloat(b.DueDate);
     });
+
+    console.log(result);
 }
