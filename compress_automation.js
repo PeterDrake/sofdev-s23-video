@@ -91,5 +91,5 @@ function compress(information){
 
 function complete(){
     console.log("We win");
-    throw new error("program is over, go home");
+    
 }
