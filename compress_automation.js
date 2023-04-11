@@ -91,5 +91,6 @@ function compress(information){
 
 function complete(){
     console.log("We win");
+    process.exit("closing time by semisonic");
     throw new error("program is over, go home");
 }
