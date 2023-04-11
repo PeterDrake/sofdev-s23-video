@@ -22,4 +22,5 @@ const directoryPath = path.join(__dirname, 'input');
 
 function doEverythingElse(files) {
     console.log(files);
+
 }
