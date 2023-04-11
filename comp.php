@@ -62,7 +62,7 @@
                             </form></div></div>';
                 }
             } else {
-                echo '<div class="bodyParagraphs"><div class="paragraph">Fiddlesticks.
+                echo '<div class="bodyParagraphs"><div class="paragraph">
                         <form action="index.html">
                             <input type="submit" value="Return to Homepage" class="submit" id="redirectButton">
                         </form></div></div>';
