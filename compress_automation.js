@@ -50,6 +50,7 @@ function doEverythingElse(files) {
 }
 
 function sortByDate(result){
+    console.log(result[0].DueDate);
 
     result.sort(function(a, b) {
         return new Date(b.DueDate) - new Date(a.DueDate);
