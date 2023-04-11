@@ -53,7 +53,7 @@ function sortByDate(result){
     console.log(result[0].DueDate);
 
     result.sort(function(a, b) {
-        return new Date(b.DueDate) - new Date(a.DueDate);
+        return new Date(a.DueDate) - new Date(b.DueDate);
     });
 
     console.log(result);
