@@ -14,20 +14,21 @@ const auth = new google.auth.GoogleAuth({
   scopes: SCOPES
 })
 
-async function createAndUploadFile(auth){
+async function createAndUploadFile(auth, fileName){
 
   // init the drive service, it handles calls to the api
   const driveService = google.drive({version:'v3', auth});
+  const filePath = ('/output/'+fileName)
 
   // metadata for the new file on the dive
   let fileMetaData = {
-    'name': 'testFile.jpg',
+    'name': fileName,
     'parents': ['1gvlj5M577gvG7qU5VQo54xx9fubF0AqN']
   }
 
   let media = {
-    mimeType: 'image/jpg',
-    body: fs.createReadStream('testFile.jpg')
+    mimeType: 'video/mp4',
+    body: fs.createReadStream(filePath)
   }
 
   // make a request
@@ -49,5 +50,8 @@ async function createAndUploadFile(auth){
     
   }
 }
-//console.log(JSON.parse('{"web":{"client_id":"299953909161-g27a7bs2o612vbk9q3r6s3q22srjp0oc.apps.googleusercontent.com","project_id":"lc-compression-storage","auth_uri":"https://accounts.google.com/o/oauth2/auth","token_uri":"https://oauth2.googleapis.com/token","auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs","client_secret":"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","javascript_origins":["http://localhost"]}}'));
-createAndUploadFile(auth).catch(console.error);
+
+// call this from other files
+function uploadFileToDrive(fileName){
+  createAndUploadFile(auth, fileName);
+}
