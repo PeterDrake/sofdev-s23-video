@@ -83,8 +83,6 @@ function compress(information){
         .on('error', console.error)
         .on('output', console.log)
 
-    client.on('xdcc-end', function(received) {
-        console.log('Download completed');
-        process.exit()
-    });
+    process.exit()
+
 }
