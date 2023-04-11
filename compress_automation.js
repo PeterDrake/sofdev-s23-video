@@ -83,6 +83,5 @@ function compress(information){
         .on('error', console.error)
         .on('output', console.log)
 
-    process.exit()
 
 }
