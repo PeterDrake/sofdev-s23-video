@@ -52,7 +52,7 @@ function doEverythingElse(files) {
 function sortByDate(result){
 
     result.sort(function(a, b) {
-        return parseFloat(b.DueDate) - parseFloat(a.DueDate);
+        return new Date(b.DueDate) - new Date(a.DueDate);
     });
 
     console.log(result);
