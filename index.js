@@ -57,4 +57,4 @@ function uploadFileToDrive(fileName){
   createAndUploadFile(auth, fileName);
 }
 
-uploadFileToDrive("testVid.mp4")
+//uploadFileToDrive("testVid.mp4")
