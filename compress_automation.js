@@ -32,9 +32,15 @@ function doEverythingElse(files) {
         database: "compression"
     });
 
+    let str = "";
+    files.forEach(function(file) {
+        str += `'${file}', `
+    });
+    str = str.substring(0, str.length - 2);
+
     con.connect(function(err) {
         if (err) throw err;
-        con.query("SELECT * FROM compressaur", function (err, result, fields) {
+        con.query(`SELECT * FROM compressaur WHERE FileLocation IN (${str})`, function (err, result, fields) {
             if (err) throw err;
             console.log(result);
         });
