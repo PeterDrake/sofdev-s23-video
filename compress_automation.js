@@ -43,7 +43,15 @@ function doEverythingElse(files) {
         con.query(`SELECT * FROM compressaur WHERE FileLocation IN (${str})`, function (err, result, fields) {
             if (err) throw err;
             console.log(result);
+
+            sortByDate(result);
         });
     });
-    console.log(JSON.parse(result[0]));
+}
+
+function sortByDate(result){
+
+    result.sort(function(a, b) {
+        return parseFloat(a.DueDate) - parseFloat(b.DueDate);
+    });
 }
