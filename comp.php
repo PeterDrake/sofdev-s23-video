@@ -52,13 +52,17 @@
                 if($rs){
                     echo '<div class="bodyParagraphs"><div class="paragraph">Video uploaded successfully.
                             <form action="index.html">
-                                <input type="submit" value="Return to Homepage" class="submit" id="redirectButton">
+                                <p>
+                                    <input type="submit" value="Return to Homepage" class="submit" id="redirectButton">
+                                </p>
                             </form></div></div>';
                 }
                 else{
                     echo '<div class="bodyParagraphs"><div class="paragraph">SQL failed.
                             <form action="index.html">
-                                <input type="submit" value="Return to Homepage" class="submit" id="redirectButton">
+                                <p>
+                                    <input type="submit" value="Return to Homepage" class="submit" id="redirectButton">
+                                </p>
                             </form></div></div>';
                 }
             } else {
