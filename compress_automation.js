@@ -81,11 +81,12 @@ function compress(information){
         preset: information.DesiredSize
     }
 
-    hbjs.spawn(options)
+    hbjs.exec(options, complete(information.FileLocation))
         .on('error', console.error)
         .on('output', console.log)
-        //.on("complete", complete(information.FileLocation))
+        //.on("complete", onComplete(information.FileLocation))
 
+    
     //print
 }
 
