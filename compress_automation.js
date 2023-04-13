@@ -89,7 +89,7 @@ function compress(information){
     hbjs.spawn(options)
         .on('error', console.error)
         .on('output', console.log)
-        .on("end", onComplete(information.FileLocation))
+        .on("end", complete(information.FileLocation))
 
     
     //print
