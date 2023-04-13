@@ -12,6 +12,8 @@ function domLoaded(){
         document.querySelector("body").style.backgroundImage="url(upload/spinn.gif)";
         document.querySelector(".Header_Text").innerHTML = "Happy Halloween!";
     }
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementsByName("date_due")[0].setAttribute('min', today);
 }
 
 function addEmailValidatior(){
