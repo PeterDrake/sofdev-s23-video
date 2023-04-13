@@ -88,21 +88,28 @@ function compress(information){
 
     hbjs.spawn(options)
         .on('error', console.error)
-        .on('output', console.log)
-        .on("end", onComplete(information.FileLocation))
+        .on('progress', progress => {
+            console.log(
+              'Percent complete: %s, ETA: %s',
+              progress.percentComplete,
+              progress.eta
+            );
+            if(progress.percentComplete == 100){
+                complete(information.FileLocation);
+            }
 
-    
-    //print
+            
+          })
 }
 
 function complete(filename){
     console.log("Compression Complete");
-    // fs.unlink("input/" + filename, (err) => {
-    //     if (err) {
-    //         throw err;
-    //     }
+    //  fs.unlink("input/" + filename, (err) => {
+    //      if (err) {
+    //          throw err;
+    //      }
 
     //     console.log("Delete File successfully.");
-    // });
-    process.exit();
+    //  });
+    //process.exit();
 }
