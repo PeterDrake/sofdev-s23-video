@@ -105,14 +105,14 @@ function compress(information){
 function complete(){
     console.log("Compression Complete");
     console.log(filename);
-    process.exit();
-    //  fs.unlink("input/" + filename, (err) => {
-    //      if (err) {
-    //          throw err;
-    //      }
+    fs.unlink("input/" + filename, (err) => {
+        if (err) {
+             throw err;
+         }
 
-    //     console.log("Delete File successfully.");
-    //  });
-    //process.exit();
+        console.log("Delete File successfully.");
+        });
+    
+    process.kill(2);
 }
 
