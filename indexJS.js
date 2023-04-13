@@ -12,8 +12,12 @@ function domLoaded(){
         document.querySelector("body").style.backgroundImage="url(upload/spinn.gif)";
         document.querySelector(".Header_Text").innerHTML = "Happy Halloween!";
     }
-    var today = new Date().toISOString().split('T')[0];
-    document.getElementsByName("date_due")[0].setAttribute('min', today);
+    const today = new Date();
+    let currentDay = String(today.getDate()).padStart(2, '0');
+    let currentMonth = String(today.getMonth()+1).padStart(2,"0");
+    let currentYear = today.getFullYear();
+    let currentDate = `${currentYear}-${currentMonth}-${currentDay}`;
+    document.getElementsByName("date_due")[0].setAttribute('min', currentDate);
 }
 
 function addEmailValidatior(){
