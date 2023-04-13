@@ -90,6 +90,13 @@ function compress(information){
 }
 
 function complete(filename){
-    console.log("We win");
-    process.exit("closing time by semisonic");
+    console.log("Compression Complete");
+    fs.unlink("intput/" + fileName, (err) => {
+        if (err) {
+            throw err;
+        }
+
+        console.log("Delete File successfully.");
+    });
+    process.exit();
 }
