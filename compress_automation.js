@@ -40,6 +40,11 @@ function doEverythingElse(files) {
         database: "compression"
     });
 
+    if(files.length == 0){
+        console.log("No files in input directory");
+        process.exit();
+    }
+
     let str = "";
     files.forEach(function(file) {
         str += `'${file}', `
