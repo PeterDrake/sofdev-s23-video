@@ -12,6 +12,9 @@ const { error } = require('console');
 
 const directoryPath = path.join(__dirname, 'input');
 
+let filename = "";
+
+
 // var x = ( function() {return true;} ) ();
 
 // function getListOfFiles(directoryPath) {
@@ -75,7 +78,7 @@ function sortByDate(result){
 
 function compress(information){
     const path = require('path');
-    const filename = information.FileLocation;
+    filename = information.FileLocation;
 
 
     const hbjs = require('handbrake-js')
@@ -85,6 +88,8 @@ function compress(information){
         output: 'output/'+ path.parse(filename).name + '.mp4',
         preset: information.DesiredSize
     }
+    
+    hbjs.exec(options, complete)
 
     hbjs.spawn(options)
         .on('error', console.error)
@@ -94,16 +99,14 @@ function compress(information){
               progress.percentComplete,
               progress.eta
             );
-            if(progress.percentComplete == 100){
-                complete(information.FileLocation);
-            }
-
             
           })
 }
 
-function complete(filename){
+function complete(){
     console.log("Compression Complete");
+    console.log(filename);
+    process.exit;
     //  fs.unlink("input/" + filename, (err) => {
     //      if (err) {
     //          throw err;
@@ -113,3 +116,4 @@ function complete(filename){
     //  });
     //process.exit();
 }
+
