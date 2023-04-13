@@ -89,9 +89,8 @@ function compress(information){
     hbjs.spawn(options)
         .on('error', console.error)
         .on('output', console.log)
-        .on("end", complete(information.FileLocation))
-
-    
+        .on('progress.percentComplete', console.log); 
+        
     //print
 }
 
