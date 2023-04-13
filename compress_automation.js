@@ -73,7 +73,6 @@ function sortByDate(result){
     });
 
     compress(result[0])
-    console.log("finished");
 }
 
 function compress(information){
@@ -106,7 +105,7 @@ function compress(information){
 function complete(){
     console.log("Compression Complete");
     console.log(filename);
-    process.exit;
+    process.exit();
     //  fs.unlink("input/" + filename, (err) => {
     //      if (err) {
     //          throw err;
