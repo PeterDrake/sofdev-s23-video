@@ -88,9 +88,9 @@ function compress(information){
 
     hbjs.spawn(options)
         .on('error', console.error)
-        .on('output', console.log)
-        .on('progress.percentComplete', console.log); 
-        
+        //.on('output', console.log)
+        .on('progress.eta', console.log); 
+
     //print
 }
 
