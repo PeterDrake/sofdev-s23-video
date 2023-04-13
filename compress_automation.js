@@ -91,8 +91,12 @@ function compress(information){
 
 function complete(filename){
     console.log("Compression Complete");
-    fs.unlink("intput/" + fileName);
-    console.log("Delete File successfully.");
-    
+    fs.unlink("input/" + filename, (err) => {
+        if (err) {
+            throw err;
+        }
+
+        console.log("Delete File successfully.");
+    });
     process.exit();
 }
