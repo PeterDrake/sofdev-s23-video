@@ -38,4 +38,8 @@ package-lock.json
 
 chunk/plupload
 chunk/uploads/
-uploads/
+input/
+output/
+node_modules/
+package-lock.json
+handbrake_test.js
