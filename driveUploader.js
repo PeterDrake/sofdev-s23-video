@@ -1,9 +1,11 @@
 const fs = require('fs');
 const readline = require('readline');
 const {google} = require('googleapis');
+const sendEmail = require('./emailSender.js');
 
-// service account key file. not on git (sorry hackers)
-const KEYFILEPATH = 'auth.json';
+
+// service account key file. not on git
+const KEYFILEPATH = './security/auth.json';
 
 // gives full access to google drive account
 const SCOPES = ['https://www.googleapis.com/auth/drive'];
@@ -55,6 +57,6 @@ async function createAndUploadFile(auth, fileName){
 }
 
 // call this from other files
-function uploadFileToDrive(fileName){
+module.exports = function uploadFileToDrive(fileName){
   createAndUploadFile(auth, fileName);
 }
