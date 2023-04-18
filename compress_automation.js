@@ -23,7 +23,7 @@ let filename = "";
         if (err) {
             return console.log('Unable to scan directory: ' + err);
         } else {
-            doEverythingElse(files);
+            queryMySQL(files);
         }
     });
     return -1;
@@ -31,7 +31,7 @@ let filename = "";
 
 // console.log(getListOfFiles(directoryPath));
 
-function doEverythingElse(files) {
+function queryMySQL(files) {
     console.log(files);
 
     var mysql = require('mysql');

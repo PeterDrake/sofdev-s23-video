@@ -2,10 +2,10 @@ const hbjs = require('handbrake-js')
 const fs = require('fs')
 const path = require('path')
 
-let filename = "metalpipe.mp4";
+let filename = "whatdolove.mp4";
 
 const options = {
-    input: 'input/metalpipe.mp4',
+    input: 'input/' + filename,
     output: 'output/new.mp4',
     preset: 'H.265 MKV 480p30'
 }
