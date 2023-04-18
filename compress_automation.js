@@ -17,17 +17,16 @@ let filename = "";
 
 // var x = ( function() {return true;} ) ();
 
-// function getListOfFiles(directoryPath) {
-    fs.readdir(directoryPath, function (err, files) {
 
-        if (err) {
-            return console.log('Unable to scan directory: ' + err);
-        } else {
-            queryMySQL(files);
-        }
-    });
-    return -1;
-// }
+fs.readdir(directoryPath, function (err, files) {
+
+    if (err) {
+        return console.log('Unable to scan directory: ' + err);
+    } else {
+        queryMySQL(files);
+    }
+});
+
 
 // console.log(getListOfFiles(directoryPath));
 
