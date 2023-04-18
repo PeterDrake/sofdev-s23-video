@@ -1,37 +1,45 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
 	<head>
 		<title>Lewis & Clark College Video Compressor Service</title>
-		<meta charset = "utf-8">
+		<meta charset="utf-8">
 		<link href="compressor.css" type="text/css" rel="stylesheet">
 		<script src="indexJS.js"></script>
-		<link rel="icon" type="image/x-icon" href="favicon.ico">
-		<!-- <script src="https://smtpjs.com/v3/smtp.js">
-		</script> -->
+		<link rel="icon" type="image/x-icon" href="usedMedia/favicon.ico">
 	</head>
 
 	<body>
-		<h1 id="banner">Lewis & Clark College Video Compressor Service</h1>
-		<div class="floatContainer">
-			<div class="floatChild">
+		<div class="header">
+			<img src="usedMedia/CompressionHeader.png" alt="Compression Logo" style="width:100%;">
+			<div class="Header_Text">LC Video Compression</div>
+		</div>
+		<div class="bodyParagraphs">
+			<div class="paragraph">
+				<p class="blurb">
+					Welcome to the Lewis & Clark College Video Compression Service!
+					Please upload the video(s) you would like to be compressed.<br>
+					Once the compression is completed, you will receive an email with a link to download the compressed videos.
+				</p>
+			</div>
+			<div class="paragraph">
 				<form action="comp.php" method="post" enctype="multipart/form-data">
-					<p>
 					<p>Please enter your name and email:</p>
-					<input type="text" id="fName" name="f_name" size="30" required placeholder="first name"><br>
-					<input type="text" id="lName" name="l_name" size="30" required placeholder="last name"><br>
-					<input type="email" id="email" name="e_mail" size="30" required placeholder="email">
-
+					<p>
+						<input type="text" id="fName" name="f_name" size="30" required placeholder="first name"><br>
+						<input type="text" id="lName" name="l_name" size="30" required placeholder="last name"><br>
+						<input type="email" id="email" name="e_mail" size="30" required placeholder="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Invalid email address">
+					</p>
 					<p>Select video to upload:</p>
-					<input type="file" id="video" name="video" accept="video/*">
-
+					<p>
+						<input type="file" id="video" name="video" accept="video/*">
+					</p>
 					<p>Please select your due date:</p>
 					<p>
 						<input type="radio" id="choose" name="choose_date" value="choose">
-						<label for="choose"><input type="date" name="date_due" id="dateDue"></label><br>
+						<label for="choose"><input type="date" name="date_due" id="dateDue" min=""></label><br>
 						<input type="radio" id="asap" name="choose_date" value="asap">
 						<label for="asap">ASAP</label>
 					</p>
-
 					<p>Please select your desired file size for the completed compressed video:</p>
 					<p>
 						<input type="radio" id="small" name="desired_size" value="small">
@@ -41,12 +49,10 @@
 						<input type="radio" id="large" name="desired_size" value="large">
 						<label for="large">Large</label>
 					</p>
+					<p>
+						<input type="submit" value="Submit" id="originalSubmit" class="submit" onclick="sendEmail();">
 					</p>
-					<input type ="submit" value="submit" id="submit" onclick="sendEmail();">
 				</form>
-			</div>
-			<div class="floatChild">
-				<p>qdhvdpciuqdwbqpwdiucbpasdicubqwpdciuasbcpw</p>
 			</div>
 		</div>
 	</body>

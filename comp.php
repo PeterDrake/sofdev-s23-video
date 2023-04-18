@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang = "en">
     <head>
         <title>Video Compressor - Upload Successful</title>
@@ -8,6 +8,10 @@
     </head>
 
     <body>
+        <div class="header">
+            <img src="usedMedia/CompressionHeader.png" alt="Compression Logo" style="width:100%;">
+            <div class="Header_Text">LC Video Compression</div>
+        </div>
         <?php
             ini_set('display_errors', 1);
             ini_set('display_startup_errors', 1);
@@ -23,7 +27,7 @@
             $file = $_FILES['video']['tmp_name'];
             $filename = $_FILES['video']['name'];
             $filesize = $_FILES['video']['size'];
-            $upload_dir = 'uploads';
+            $upload_dir = 'input';
             $target_file = $upload_dir . DIRECTORY_SEPARATOR . $filename;
             if (move_uploaded_file($file, $target_file)) {
                 if($size == 'small') {
@@ -42,38 +46,33 @@
                     $datetime->add(new DateInterval('P7D'));
                     $date = $datetime->format('Y-m-d');
                 }
-                //echo $file;
 
                 $sql = "INSERT INTO `compressaur` (`FirstName`, `LastName`, `Email`, `FileLocation`, `DesiredSize`, `DueDate`) VALUES ('$firstName', '$lastName', '$email', '$filename', '$size', '$date')";
                 $rs = mysqli_query($con, $sql);
-                //echo '<p>Thank you ' . $firstName . ', your video has been successfully uploaded.</p>';
                 if($rs){
-                   echo "<h2>Successful Upload</h2>";
+                    echo '<div class="bodyParagraphs"><div class="paragraph">Video uploaded successfully.
+                            <form action="index.html">
+                                <p>
+                                    <input type="submit" value="Return to Homepage" class="submit" id="redirectButton">
+                                </p>
+                            </form></div></div>';
                 }
                 else{
-                    echo "SQL failed";
+                    echo '<div class="bodyParagraphs"><div class="paragraph">SQL failed.
+                            <form action="index.html">
+                                <p>
+                                    <input type="submit" value="Return to Homepage" class="submit" id="redirectButton">
+                                </p>
+                            </form></div></div>';
                 }
             } else {
-                echo 'File upload failed.';
+                echo '<div class="bodyParagraphs"><div class="paragraph">File upload failed.
+                        <form action="index.html">
+                            <p>
+                                <input type="submit" value="Return to Homepage" class="submit" id="redirectButton">
+                            </p>
+                        </form></div></div>';
             }
-
-            ?>
-    <h1 id="timer"></h1>
-    <script>
-        let timer = document.getElementById("timer");
-        let time = 5;
-
-        var countdown = setInterval(function() {
-            if (time <= 0) {
-                clearInterval(countdown);
-            }
-            timer.innerHTML = `You will be redirected in ${time} seconds.`;
-            time -= 1;
-        }, 1000);
-        <?php
-            header("Refresh:6; url=index.html");
         ?>
-    </script>
     </body>
 </html>
-<!--    header("Refresh:5; url=index.html");-->

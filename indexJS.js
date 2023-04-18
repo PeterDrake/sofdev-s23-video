@@ -10,9 +10,14 @@ function domLoaded(){
     let month = date.getMonth() + 1;
     if (day === 31 && month === 10) {
         document.querySelector("body").style.backgroundImage="url(upload/spinn.gif)";
-        document.querySelector("#banner").innerHTML = "Happy Halloween!";
-        document.querySelector("#banner").style.textAlign = "center";
+        document.querySelector(".Header_Text").innerHTML = "Happy Halloween!";
     }
+    const today = new Date();
+    let currentDay = String(today.getDate()).padStart(2, '0');
+    let currentMonth = String(today.getMonth()+1).padStart(2,"0");
+    let currentYear = today.getFullYear();
+    let currentDate = `${currentYear}-${currentMonth}-${currentDay}`;
+    document.getElementsByName("date_due")[0].setAttribute('min', currentDate);
 }
 
 function addEmailValidatior(){
