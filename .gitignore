@@ -38,3 +38,4 @@ app.js
 pass.js
 auth.json
 emailCredentials.json
+token.json
