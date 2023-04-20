@@ -34,9 +34,10 @@
             $filesize = $_FILES['video']['size'];
             $upload_dir = 'input';
 
-            $hex = getRandomHex(4);
 
-            $target_file = $upload_dir . DIRECTORY_SEPARATOR . $hex;
+            $path = pathinfo($filename);
+            $videoname = $path['filename'] . getRandomHex(4) . '.mp4';
+            $target_file = $upload_dir . DIRECTORY_SEPARATOR . $videoname;
 
 
             if (move_uploaded_file($file, $target_file)) {
@@ -57,7 +58,7 @@
                     $date = $datetime->format('Y-m-d');
                 }
 
-                $sql = "INSERT INTO `compressaur` (`FirstName`, `LastName`, `Email`, `FileLocation`, `DesiredSize`, `DueDate`) VALUES ('$firstName', '$lastName', '$email', '$hex', '$size', '$date')";
+                $sql = "INSERT INTO `compressaur` (`FirstName`, `LastName`, `Email`, `FileLocation`, `DesiredSize`, `DueDate`) VALUES ('$firstName', '$lastName', '$email', '$videoname', '$size', '$date')";
                 $rs = mysqli_query($con, $sql);
                 if($rs){
                     echo '<div class="bodyParagraphs"><div class="paragraph">Video uploaded successfully.
