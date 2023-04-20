@@ -9,10 +9,12 @@ const path = require('path');
 const fs = require('fs');
 const { brotliCompress } = require('zlib');
 const { error } = require('console');
+const drive = require('./driveUploader.js');
 
 const directoryPath = path.join(__dirname, 'input');
 
 let filename = "";
+let emailTo = "";
 
 
 // var x = ( function() {return true;} ) ();
@@ -77,6 +79,7 @@ function sortByDate(result){
 function compress(information){
     const path = require('path');
     filename = information.FileLocation;
+    emailTo = information.Email;
 
 
     const hbjs = require('handbrake-js')
@@ -114,7 +117,7 @@ function complete(){
 
         console.log("Delete File successfully.");
         });
-    
+    drive(filename, emailTo);
     process.kill(2);
 }
 

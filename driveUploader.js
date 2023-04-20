@@ -17,7 +17,7 @@ const auth = new google.auth.GoogleAuth({
   scopes: SCOPES
 })
 
-async function createAndUploadFile(auth, fileName){
+async function createAndUploadFile(auth, fileName, sendTo){
 
   // init the drive service, it handles calls to the api
   const driveService = google.drive({version:'v3', auth});
@@ -51,7 +51,8 @@ async function createAndUploadFile(auth, fileName){
   switch(response.status){
     case 200:
       console.log('File created, its share link is: https://drive.google.com/file/d/'+response.data.id+'/view?usp=share_link') // on a success, gives you a shareable link
-      shareLink = "https://drive.google.com/file/d/"+response.data.id+"/view?usp=share_link"
+      shareLink = "https://drive.google.com/file/d/"+response.data.id+"/view?usp=share_link";
+      sendEmail(sendTo, shareLink);
       break;
     
     default:
@@ -64,7 +65,6 @@ async function createAndUploadFile(auth, fileName){
 }
 
 // call this from other files. returns the share link for the uploaded file
-module.exports = function uploadFileToDrive(fileName){
-  shareLink = createAndUploadFile(auth, fileName);
-  return shareLink;
+module.exports = function uploadFileToDrive(fileName, sendTo){
+  createAndUploadFile(auth, fileName, sendTo);
 }
