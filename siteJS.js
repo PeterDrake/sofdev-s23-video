@@ -7,7 +7,19 @@ document.getElementById("submit").addEventListener("click", emptyArea);
 
 function domLoaded(){
     addEmailValidatior();
-    //  document.getElementById("driveButton").addEventListener("click", sendToDrive);
+    const date = new Date();
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    if (day === 31 && month === 10) {
+        document.querySelector("body").style.backgroundImage="url(upload/spinn.gif)";
+        document.querySelector(".Header_Text").innerHTML = "Happy Halloween!";
+    }
+    const today = new Date();
+    let currentDay = String(today.getDate()).padStart(2, '0');
+    let currentMonth = String(today.getMonth()+1).padStart(2,"0");
+    let currentYear = today.getFullYear();
+    let currentDate = `${currentYear}-${currentMonth}-${currentDay}`;
+    document.getElementsByName("date_due")[0].setAttribute('min', currentDate);
 }
 
 function addEmailValidatior(){
@@ -62,12 +74,3 @@ function emptyArea(e) {
       e.stopPropagation();
     }
   }
-
-
-//TODO: Get this to work
-function sendToDrive(){
-  console.log("Send Email Code Running")
-  fileLocation = document.getElementById('myFile');
-  uploadFile(fileLocation);
-  console.log("Send Email Code Ran")
-}

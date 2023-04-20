@@ -38,3 +38,14 @@ app.js
 pass.js
 auth.json
 emailCredentials.json
+node_modules/
+package-lock.json
+
+chunk/plupload
+chunk/uploads/
+input/
+output/
+node_modules/
+package-lock.json
+handbrake_test.js
+input/
