@@ -23,15 +23,15 @@ async function createAndUploadFile(auth, fileName){
   const driveService = google.drive({version:'v3', auth});
 
   // path to where the file is stored locally. change as needed
-  const filePath = ('/output/'+fileName)
+  const filePath = ('./output/'+fileName)
 
-  // link to view and download file. updated with value if upload works
+  // link to view and download file. starts empty, updated with value if upload works
   var shareLink = '';
 
   // metadata for the new file on the dive
   let fileMetaData = {
     'name': fileName,
-    'parents': ['1gvlj5M577gvG7qU5VQo54xx9fubF0AqN'] //id of the folder these should get put into
+    'parents': ['1gvlj5M577gvG7qU5VQo54xx9fubF0AqN'] //id of the drive folder the files should get put into
   }
 
   // making the file to upload
