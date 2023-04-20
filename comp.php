@@ -36,7 +36,7 @@
 
 
             $path = pathinfo($filename);
-            $videoname = $path['filename'] . getRandomHex(4) . '.mp4';
+            $videoname = $path['filename'] . getRandomHex(4) . $path['extension'];
             $target_file = $upload_dir . DIRECTORY_SEPARATOR . $videoname;
 
 
