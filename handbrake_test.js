@@ -2,7 +2,7 @@ const hbjs = require('handbrake-js')
 const fs = require('fs')
 const path = require('path')
 
-let filename = "whatdolove.mp4";
+let filename = "sponge.mp4";
 
 const options = {
     input: 'input/' + filename,
