@@ -43,3 +43,4 @@ output/
 node_modules/
 package-lock.json
 handbrake_test.js
+input/

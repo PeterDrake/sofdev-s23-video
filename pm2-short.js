@@ -32,7 +32,12 @@ function compress(item){
     hbjs.exec(options, complete)
 
     hbjs.spawn(options)
-        .on('error', console.error)
+        .on('error', error => {
+            console.error;
+            process.kill(2);
+        }
+        
+        )
         .on('progress', progress => {
             console.log(
               'Percent complete: %s, ETA: %s',
