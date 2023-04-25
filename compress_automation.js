@@ -118,6 +118,10 @@ function complete(){
         console.log("Delete File successfully.");
         });
     drive(filename, emailTo);
-    process.kill(2);
+    
+    setTimeout(function(){
+        process.kill(2);
+    }, 30000);
+    
 }
 
