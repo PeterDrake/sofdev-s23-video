@@ -22,6 +22,25 @@ function domLoaded(){
     document.getElementsByName("date_due")[0].setAttribute('min', currentDate);
 }
 
+let barTrack = 0;
+function move() {
+    if (barTrack == 0) {
+        barTrack = 1;
+        const elem = document.getElementById("myBar");
+        let width = 1;
+        const id = setInterval(frame, 10);
+        function frame() {
+            if (width >= 100) {
+                clearInterval(id);
+                barTrack = 0;
+            } else {
+                width++;
+                elem.style.width = width + "%";
+            }
+        }
+    }
+}
+
 function addEmailValidatior(){
     var validRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
     emailField = document.getElementById("email");
