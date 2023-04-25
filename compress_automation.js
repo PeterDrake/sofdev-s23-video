@@ -118,6 +118,13 @@ function complete(){
         console.log("Delete File successfully.");
         });
     drive(filename, emailTo);
+    fs.unlink("output/" + path.parse(filename).name + '.mp4', (err) => {
+        if (err) {
+            throw err;
+        }
+
+        console.log("Delete File successfully.");
+    });
     process.kill(2);
 }
 
