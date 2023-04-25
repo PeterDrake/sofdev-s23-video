@@ -50,15 +50,15 @@ h1 {
 	background-color: #f18a29;
 }
 
-#myProgress {
+.progress-bar {
 	width: 100%;
-	background-color: grey;
+	height: 20px;
+	background-color: #ddd;
 }
-
-#myBar {
-	width: 1%;
-	height: 30px;
-	background-color: green;
+#progress {
+	width: 0%;
+	height: 100%;
+	background-color: #4CAF50;
 }
 
 /*Aurelio Adds*/
