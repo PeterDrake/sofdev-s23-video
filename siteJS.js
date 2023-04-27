@@ -1,4 +1,3 @@
-//import {uploadFile} from './index.js'
 
 window.addEventListener("DOMContentLoaded",domLoaded);
 
@@ -6,7 +5,7 @@ document.getElementById("submit").addEventListener("click", emptyArea);
 
 
 function domLoaded(){
-    addEmailValidatior();
+    addEmailValidator();
     const date = new Date();
     let day = date.getDate();
     let month = date.getMonth() + 1;
@@ -22,7 +21,7 @@ function domLoaded(){
     document.getElementsByName("date_due")[0].setAttribute('min', currentDate);
 }
 
-function addEmailValidatior(){
+function addEmailValidator(){
     var validRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
     emailField = document.getElementById("email");
     emailField.addEventListener("keyup", function (event) {
