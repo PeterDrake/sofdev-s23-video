@@ -9,25 +9,26 @@ const path = require('path');
 const fs = require('fs');
 const { brotliCompress } = require('zlib');
 const { error } = require('console');
+const drive = require('./driveUploader.js');
 
 const directoryPath = path.join(__dirname, 'input');
 
 let filename = "";
+let emailTo = "";
 
 
 // var x = ( function() {return true;} ) ();
 
-// function getListOfFiles(directoryPath) {
-    fs.readdir(directoryPath, function (err, files) {
 
-        if (err) {
-            return console.log('Unable to scan directory: ' + err);
-        } else {
-            queryMySQL(files);
-        }
-    });
-    return -1;
-// }
+fs.readdir(directoryPath, function (err, files) {
+
+    if (err) {
+        return console.log('Unable to scan directory: ' + err);
+    } else {
+        queryMySQL(files);
+    }
+});
+
 
 // console.log(getListOfFiles(directoryPath));
 
@@ -78,6 +79,7 @@ function sortByDate(result){
 function compress(information){
     const path = require('path');
     filename = information.FileLocation;
+    emailTo = information.Email;
 
 
     const hbjs = require('handbrake-js')
@@ -91,7 +93,10 @@ function compress(information){
     hbjs.exec(options, complete)
 
     hbjs.spawn(options)
-        .on('error', console.error)
+        .on('error', error => {
+            console.error;
+            process.kill(2);
+        })
         .on('progress', progress => {
             console.log(
               'Percent complete: %s, ETA: %s',
@@ -112,7 +117,11 @@ function complete(){
 
         console.log("Delete File successfully.");
         });
+    drive(filename, emailTo);
     
-    process.kill(2);
+    setTimeout(function(){
+        process.kill(2);
+    }, 30000);
+    
 }
 

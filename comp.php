@@ -17,6 +17,11 @@
             ini_set('display_startup_errors', 1);
             error_reporting(E_ALL);
 
+            // function to get random hex
+            function getRandomHex($num = 4) {
+                return bin2hex(openssl_random_pseudo_bytes($num));
+            }
+
             $con = mysqli_connect("localhost","compression","compression","compression");
             $firstName = $_POST['f_name'];
             $lastName = $_POST['l_name'];
@@ -28,7 +33,13 @@
             $filename = $_FILES['video']['name'];
             $filesize = $_FILES['video']['size'];
             $upload_dir = 'input';
-            $target_file = $upload_dir . DIRECTORY_SEPARATOR . $filename;
+
+
+            $path = pathinfo($filename);
+            $videoname = $path['filename'] . getRandomHex(4) . '.' . $path['extension'];
+            $target_file = $upload_dir . DIRECTORY_SEPARATOR . $videoname;
+
+
             if (move_uploaded_file($file, $target_file)) {
                 if($size == 'small') {
                     $size = 'H.265 MKV 480p30';
@@ -47,7 +58,7 @@
                     $date = $datetime->format('Y-m-d');
                 }
 
-                $sql = "INSERT INTO `compressaur` (`FirstName`, `LastName`, `Email`, `FileLocation`, `DesiredSize`, `DueDate`) VALUES ('$firstName', '$lastName', '$email', '$filename', '$size', '$date')";
+                $sql = "INSERT INTO `compressaur` (`FirstName`, `LastName`, `Email`, `FileLocation`, `DesiredSize`, `DueDate`) VALUES ('$firstName', '$lastName', '$email', '$videoname', '$size', '$date')";
                 $rs = mysqli_query($con, $sql);
                 if($rs){
                     echo '<div class="bodyParagraphs"><div class="paragraph">Video uploaded successfully.

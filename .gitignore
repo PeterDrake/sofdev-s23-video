@@ -33,6 +33,11 @@ routes/index.js
 bin/www
 package.json
 app.js
+
+# Security and password storage
+pass.js
+auth.json
+emailCredentials.json
 node_modules/
 package-lock.json
 
@@ -43,3 +48,4 @@ output/
 node_modules/
 package-lock.json
 handbrake_test.js
+input/
