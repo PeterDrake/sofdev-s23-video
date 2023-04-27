@@ -65,6 +65,6 @@ async function createAndUploadFile(auth, fileName, sendTo){
 }
 
 // call this from other files. returns the share link for the uploaded file
-module.exports = function uploadFileAndEmail(fileName, sendTo){
+module.exports = function uploadFileToDrive(fileName, sendTo){
   createAndUploadFile(auth, fileName, sendTo);
 }
